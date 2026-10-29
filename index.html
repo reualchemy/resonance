@@ -35,6 +35,8 @@ nav a{color:var(--muted);text-decoration:none}
 .hero{text-align:center}
 .hero h1{font-size:clamp(56px,12vw,140px);letter-spacing:-.01em}
 .hero h1 em{color:var(--accent)}
+.hero h1{font-size:0;line-height:0}
+.hero h1 .ttl{width:min(100%,860px);height:auto;display:inline-block}
 .hero .lead{max-width:56ch;margin:24px auto 0;color:var(--muted);font-size:18px}
 .shelf{display:flex;justify-content:center;align-items:flex-end;gap:clamp(8px,2vw,24px);margin:56px 0 40px;flex-wrap:wrap}
 .cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
@@ -53,6 +55,9 @@ button.btn{border:1px solid var(--fg);font-family:inherit;cursor:pointer}
 .ov-grid figure{margin:0}
 .ov-grid figcaption{font-size:13px;color:var(--muted);margin-top:8px}
 .cover.big{width:clamp(200px,34vw,340px)}
+img.cover{height:auto;display:block;box-shadow:0 18px 40px rgba(74,69,59,.28)}
+.ver img{display:block;width:100%;max-width:240px;height:auto;margin:0 0 24px;box-shadow:0 12px 28px rgba(74,69,59,.25)}
+.ver .cap{font-size:12px;margin-top:-12px;margin-bottom:20px}
 .ruled{border-top:1px solid var(--line)}
 .vers{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
 .ver{padding:32px;border:1px solid var(--line)}
@@ -113,11 +118,11 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 
 <section class="hero"><div class="in">
 <p class="eyebrow">Alchemiczny Kalendarz i Dziennik Lunarny · cykl • rezonans • refleksja</p>
-<h1>re:Sonance <em>2027</em></h1>
+<h1><img class="ttl" src="img/tytul-resonance-2027.webp" alt="re:Sonance 2027" width="1600" height="197"></h1>
 <p class="lead">Posłuchaj Księżyca w rytmie Swojej Duszy. Kalendarz lunarny i dwa tony na każdy dzień roku.</p>
 <div class="shelf">
   <button type="button" class="ph thumb" data-open aria-label="Zobacz wszystkie kalendarze roczne">kalendarz<br>roczny 1</button>
-  <div class="ph cover big">okładka<br>re:Sonance 2027</div>
+  <img class="cover big" src="img/okladka-plaska.webp" alt="Okładka kalendarza re:Sonance 2027" width="1000" height="1414" fetchpriority="high">
   <button type="button" class="ph thumb" data-open aria-label="Zobacz wszystkie kalendarze roczne">kalendarz<br>roczny 2</button>
 </div>
 <p class="announce">Premiera re:Sonance™ 2027 w nowiu 9 listopada 2026, w pierwszej kolejności dla subskrybentów.</p>
@@ -179,8 +184,8 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 <section id="wersje" class="ruled"><div class="in">
 <p class="eyebrow">Wersje kalendarza</p><h2>Najpierw elektroniczna, potem papierowa</h2>
 <div class="vers">
-<div class="ver"><span class="tag">na start</span><h3>Wersja elektroniczna</h3><p>Kalendarz w pliku do użycia na tablecie, np. w GoodNotes, albo do samodzielnego wydruku, razem z dwoma tonami na każdy dzień.</p></div>
-<div class="ver print"><span class="tag">jeśli zbierze się dość osób</span><h3>Wersja drukowana</h3><p>Powstanie, gdy na liście oczekujących pojawi się odpowiednia liczba chętnych. Zapisz się, jeśli chcesz papierowy egzemplarz.</p></div>
+<div class="ver"><img src="img/okladka-plaska.webp" alt="Okładka wersji elektronicznej" width="1000" height="1414" loading="lazy"><span class="tag">na start</span><h3>Wersja elektroniczna</h3><p>Kalendarz w pliku do użycia na tablecie, np. w GoodNotes, albo do samodzielnego wydruku, razem z dwoma tonami na każdy dzień.</p></div>
+<div class="ver print"><img src="img/okladka-druk-uszlachetnienie.webp" alt="Wizualizacja okładki wersji drukowanej ze złoceniem i tłoczeniem" width="1000" height="1414" loading="lazy"><p class="cap fine">Wizualizacja: złocenie i tłoczenie.</p><span class="tag">jeśli zbierze się dość osób</span><h3>Wersja drukowana</h3><p>Powstanie, gdy na liście oczekujących pojawi się odpowiednia liczba chętnych. Zapisz się, jeśli chcesz papierowy egzemplarz.</p></div>
 </div></div></section>
 
 <section id="lista"><div class="in" style="text-align:center">
