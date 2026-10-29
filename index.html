@@ -44,14 +44,18 @@ nav a{color:var(--muted);text-decoration:none}
 .ph{background:var(--ph);color:var(--ph-fg);display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border:1px dashed var(--ph-fg);padding:12px}
 .cover{aspect-ratio:18.8/25.7;width:clamp(120px,22vw,230px)}
 .thumb{aspect-ratio:210/297;width:clamp(80px,14vw,150px);cursor:pointer;font-family:inherit;transition:transform .2s}
+.thumb{padding:0;border:0;background:none}
+.thumb img{display:block;width:100%;height:auto;box-shadow:0 8px 24px rgba(74,69,59,.22)}
 .thumb:hover,.thumb:focus-visible{transform:translateY(-4px);outline:2px solid var(--accent);outline-offset:3px}
 button.btn{border:1px solid var(--fg);font-family:inherit;cursor:pointer}
 .ov{position:fixed;inset:0;z-index:50;background:rgba(251,246,239,.96);overflow:auto;padding:max(24px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 48px max(16px,env(safe-area-inset-left,0px))}
 .ov-in{max-width:1080px;margin:0 auto}
 .ov-top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px}
 .ov-top h2{font-size:clamp(28px,4vw,40px)}
-.ov-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:20px}
-.ov-grid .ph{aspect-ratio:210/297}
+.ov-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:24px}
+.ov-grid img{display:block;width:100%;height:auto;box-shadow:0 6px 18px rgba(74,69,59,.18)}
+.ov-grid .wide{grid-column:span 2}
+@media(max-width:520px){.ov-grid .wide{grid-column:span 1}}
 .ov-grid figure{margin:0}
 .ov-grid figcaption{font-size:13px;color:var(--muted);margin-top:8px}
 .cover.big{width:clamp(200px,34vw,340px)}
@@ -78,6 +82,8 @@ img.cover{height:auto;display:block;box-shadow:0 18px 40px rgba(74,69,59,.28)}
 .tone{display:flex;align-items:center;gap:16px;padding:20px;border:1px solid var(--line)}
 .tone b{display:block;font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.2}
 .tone span:not(.play){font-size:13px;color:var(--muted)}
+button.play{border:0;cursor:pointer;font-family:inherit}
+button.play:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .play{flex:none;width:48px;height:48px;border-radius:50%;background:#4A453B;color:#FBF6EF;display:grid;place-items:center;font-size:14px;padding-left:3px}
 .cover.small{width:clamp(96px,16vw,150px);opacity:.75}
 .band{background:var(--band);color:var(--band-fg)}
@@ -104,7 +110,7 @@ img.zap{height:1.15em;width:auto;vertical-align:-0.28em;display:inline-block}
 .moons .ph{aspect-ratio:1;flex-direction:column;gap:4px}
 .moons b{font-family:var(--serif);font-size:20px;font-weight:400;text-transform:none;letter-spacing:0;color:var(--fg)}
 .sheets{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-top:40px}
-.sheet .ph{aspect-ratio:210/297;margin-bottom:16px}
+.sheet img{display:block;width:100%;height:auto;margin-bottom:16px;box-shadow:0 6px 18px rgba(74,69,59,.18)}
 .sheet h3{font-size:24px}
 .sheet p{font-size:14px;color:var(--muted)}
 .tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
@@ -123,14 +129,13 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 <h1><img class="ttl" src="img/tytul-resonance-2027.webp" alt="re:Sonance 2027" width="1600" height="197"></h1>
 <p class="lead">Posłuchaj Księżyca w rytmie Swojej Duszy.<br>Kalendarz lunarny i dwa tony na każdy dzień roku.</p>
 <div class="shelf">
-  <button type="button" class="ph thumb" data-open aria-label="Zobacz wszystkie kalendarze roczne">kalendarz<br>roczny 1</button>
+  <button type="button" class="thumb" data-open aria-label="Zobacz wszystkie kalendarze roczne"><img src="img/kal-2.webp" alt="Kalendarz roczny, wersja ciemna" width="640" height="905"></button>
   <img class="cover big" src="img/okladka-plaska.webp" alt="Okładka kalendarza re:Sonance 2027" width="1000" height="1414" fetchpriority="high">
-  <button type="button" class="ph thumb" data-open aria-label="Zobacz wszystkie kalendarze roczne">kalendarz<br>roczny 2</button>
+  <button type="button" class="thumb" data-open aria-label="Zobacz wszystkie kalendarze roczne"><img src="img/kal-3.webp" alt="Kalendarz roczny w spirali" width="640" height="905"></button>
 </div>
 <p class="announce">Premiera re:Sonance™ 2027 w nowiu 9 listopada 2026,<br>w pierwszej kolejności dla subskrybentów.</p>
 <div class="cta"><a class="btn" href="https://www.reualchemy.com/s/resonance-2027" target="_blank" rel="noopener">☾ zapisuję się na re:Sonance ♫ 2027</a><a class="btn alt" href="#zeszyt">Poznaj kalendarz</a><button type="button" class="btn alt" data-open>Zobacz wszystkie kalendarze roczne</button></div>
 <p class="fine">Zapisujesz się na listę oczekujących na kalendarz. W mailu powitalnym znajdziesz wszystko, co potrzebne.</p>
-<p class="note">Szare pola to miejsca na mockupy okładki.</p>
 </div></section>
 
 <section class="band"><div class="in two">
@@ -144,8 +149,8 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 <p class="lede">Tony zmieniają się razem z fazą Księżyca: od ciszy w nowiu, przez coraz wyraźniejsze brzmienie, do pełni, a potem znów ku ciszy. W dni zaćmień dochodzi druga para tonów.</p>
 <p class="tag" style="margin-top:24px">Alchemia Dwóch Tonów™</p></div>
 <div class="tones">
-<div class="tone"><span class="play" aria-hidden="true">▶</span><div><b>Ton 1</b><span>próbka dźwięku do dodania</span></div></div>
-<div class="tone"><span class="play" aria-hidden="true">▶</span><div><b>Ton 2</b><span>próbka dźwięku do dodania</span></div></div>
+<div class="tone"><button type="button" class="play" data-src="audio/ton-1.mp3" aria-label="Odtwórz próbkę: Ton 1">▶</button><div><b>Ton 1</b><span>30-sekundowa próbka</span></div></div>
+<div class="tone"><button type="button" class="play" data-src="audio/ton-2.mp3" aria-label="Odtwórz próbkę: Ton 2">▶</button><div><b>Ton 2</b><span>30-sekundowa próbka</span></div></div>
 <div class="ph mock">mockup: dzień kalendarza z tonami</div>
 </div></div></section>
 
@@ -178,16 +183,16 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 <p class="eyebrow">Dodatkowo</p><h2>Kalendarze roczne</h2>
 <p class="lede">Kalendarze roczne na jednej stronie. Wybierz jeden albo zbierz komplet.</p>
 <div class="sheets">
-<div class="sheet"><div class="ph">mockup A</div><span class="tag">roczny</span><h3>Nazwa kalendarza</h3><p>Krótki opis.</p></div>
-<div class="sheet"><div class="ph">mockup B</div><span class="tag">roczny</span><h3>Nazwa kalendarza</h3><p>Krótki opis.</p></div>
-<div class="sheet"><div class="ph">mockup C</div><span class="tag">roczny</span><h3>Nazwa kalendarza</h3><p>Krótki opis.</p></div>
+<div class="sheet"><img src="img/kal-1.webp" alt="Pionowy, wersja jasna" width="640" height="905" loading="lazy"><span class="tag">roczny</span><h3>Pionowy, wersja jasna</h3><p>Wszystkie miesiące w kolumnach na jednej stronie.</p></div>
+<div class="sheet"><img src="img/kal-3.webp" alt="Spirala, wersja jasna" width="640" height="905" loading="lazy"><span class="tag">roczny</span><h3>Spirala, wersja jasna</h3><p>Rok jako spirala księżyców.</p></div>
+<div class="sheet"><img src="img/kal-5.webp" alt="Miesiące w kręgach" width="640" height="905" loading="lazy"><span class="tag">roczny</span><h3>Miesiące w kręgach</h3><p>Każdy miesiąc w osobnym kręgu.</p></div>
 </div></div></section>
 
 <section id="wersje" class="ruled"><div class="in">
 <p class="eyebrow">Wersje kalendarza</p><h2>Najpierw elektroniczna, potem papierowa</h2>
 <div class="vers">
 <div class="ver"><img src="img/okladka-plaska.webp" alt="Okładka wersji elektronicznej" width="1000" height="1414" loading="lazy"><span class="tag">na start</span><h3>Wersja elektroniczna</h3><p>Kalendarz w pliku do użycia na tablecie, np. w GoodNotes, albo do samodzielnego wydruku, razem z dwoma tonami na każdy dzień.</p></div>
-<div class="ver print"><img src="img/okladka-druk-uszlachetnienie.webp" alt="Wizualizacja okładki wersji drukowanej ze złoceniem i tłoczeniem" width="1000" height="1414" loading="lazy"><p class="cap fine">Wizualizacja: złocenie i tłoczenie.</p><span class="tag">jeśli zbierze się dość osób</span><h3>Wersja drukowana</h3><p>Powstanie, gdy na liście oczekujących pojawi się odpowiednia liczba chętnych. Zapisz się, jeśli chcesz papierowy egzemplarz.</p></div>
+<div class="ver print"><img src="img/okladka-druk-uszlachetnienie.webp" alt="Wizualizacja okładki wersji drukowanej ze złoceniem i tłoczeniem" width="1000" height="1414" loading="lazy"><p class="cap fine">Limited Edition wersja drukowana</p><span class="tag">jeśli zbierze się dość osób</span><h3>Wersja drukowana</h3><p>Powstanie, gdy na liście oczekujących pojawi się odpowiednia liczba chętnych. Zapisz się, jeśli chcesz papierowy egzemplarz.</p></div>
 </div></div></section>
 
 <section id="lista"><div class="in" style="text-align:center">
@@ -211,14 +216,20 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 </div></div></section>
 
 <div class="ov" id="ov" role="dialog" aria-modal="true" aria-label="Kalendarze roczne" hidden><div class="ov-in">
-<div class="ov-top"><h2>Kalendarze roczne</h2><button type="button" class="btn" id="ovx">Zamknij</button></div>
+<div class="ov-top"><h2>Kalendarze roczne i biurkowe</h2><button type="button" class="btn" id="ovx">Zamknij</button></div>
 <div class="ov-grid">
-<figure><div class="ph">kalendarz 1</div><figcaption>Nazwa kalendarza 1</figcaption></figure>
-<figure><div class="ph">kalendarz 2</div><figcaption>Nazwa kalendarza 2</figcaption></figure>
-<figure><div class="ph">kalendarz 3</div><figcaption>Nazwa kalendarza 3</figcaption></figure>
-<figure><div class="ph">kalendarz 4</div><figcaption>Nazwa kalendarza 4</figcaption></figure>
-<figure><div class="ph">kalendarz 5</div><figcaption>Nazwa kalendarza 5</figcaption></figure>
-<figure><div class="ph">kalendarz 6</div><figcaption>Nazwa kalendarza 6</figcaption></figure>
+<figure><img src="img/kal-1.webp" alt="Pionowy, jasny" width="640" height="905" loading="lazy"><figcaption>Pionowy, jasny</figcaption></figure>
+<figure><img src="img/kal-2.webp" alt="Pionowy, ciemny" width="640" height="905" loading="lazy"><figcaption>Pionowy, ciemny</figcaption></figure>
+<figure><img src="img/kal-3.webp" alt="Spirala, jasny" width="640" height="905" loading="lazy"><figcaption>Spirala, jasny</figcaption></figure>
+<figure><img src="img/kal-4.webp" alt="Spirala, ciemny" width="640" height="905" loading="lazy"><figcaption>Spirala, ciemny</figcaption></figure>
+<figure><img src="img/kal-5.webp" alt="Miesiące w kręgach, jasny" width="640" height="905" loading="lazy"><figcaption>Miesiące w kręgach, jasny</figcaption></figure>
+<figure><img src="img/kal-6.webp" alt="Miesiące w kręgach, ciemny" width="640" height="905" loading="lazy"><figcaption>Miesiące w kręgach, ciemny</figcaption></figure>
+<figure class="wide"><img src="img/kal-7.webp" alt="Poziomy, jasny" width="1000" height="707" loading="lazy"><figcaption>Poziomy, jasny</figcaption></figure>
+<figure class="wide"><img src="img/kal-8.webp" alt="Poziomy, ciemny" width="1000" height="707" loading="lazy"><figcaption>Poziomy, ciemny</figcaption></figure>
+<figure class="wide"><img src="img/biurko-2027-rok.webp" alt="Biurkowy 2027, strona roczna" width="1000" height="523" loading="lazy"><figcaption>Biurkowy 2027, strona roczna</figcaption></figure>
+<figure class="wide"><img src="img/biurko-2027-miesiac.webp" alt="Biurkowy 2027, strona miesiąca" width="1000" height="548" loading="lazy"><figcaption>Biurkowy 2027, strona miesiąca</figcaption></figure>
+<figure class="wide"><img src="img/biurko-num-rok.webp" alt="Biurkowy numerologiczny, strona roczna" width="1000" height="523" loading="lazy"><figcaption>Biurkowy numerologiczny, strona roczna</figcaption></figure>
+<figure class="wide"><img src="img/biurko-num-miesiac.webp" alt="Biurkowy numerologiczny, strona miesiąca" width="1000" height="548" loading="lazy"><figcaption>Biurkowy numerologiczny, strona miesiąca</figcaption></figure>
 </div></div></div>
 <script>
 (function(){var ov=document.getElementById('ov');function o(){ov.hidden=false;document.body.style.overflow='hidden'}function c(){ov.hidden=true;document.body.style.overflow=''}
@@ -226,6 +237,14 @@ document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener(
 document.getElementById('ovx').addEventListener('click',c);
 ov.addEventListener('click',function(e){if(e.target===ov)c()});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!ov.hidden)c()});})();
+</script>
+<script>
+(function(){var a=new Audio();a.preload='none';var cur=null;
+function reset(){document.querySelectorAll('button.play').forEach(function(b){b.textContent='\u25B6';b.setAttribute('aria-pressed','false')})}
+document.querySelectorAll('button.play').forEach(function(b){b.addEventListener('click',function(){
+if(cur===b&&!a.paused){a.pause();reset();return}
+reset();cur=b;a.src=b.dataset.src;a.currentTime=0;var p=a.play();if(p&&p.catch)p.catch(function(){reset()});b.textContent='\u275A\u275A';b.setAttribute('aria-pressed','true')})});
+a.addEventListener('ended',reset);})();
 </script>
 <footer><div class="in"><span>re:U Alchemy Studio</span><span>Regulamin · Kontakt · Instagram · Substack</span></div></footer>
 </body>
