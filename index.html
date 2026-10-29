@@ -37,7 +37,7 @@ nav a{color:var(--muted);text-decoration:none}
 .hero h1 em{color:var(--accent)}
 .hero h1{font-size:0;line-height:0}
 .hero h1 .ttl{width:min(100%,860px);height:auto;display:inline-block}
-.hero .lead{max-width:56ch;margin:24px auto 0;color:var(--muted);font-size:18px}
+.hero .lead{max-width:60ch;margin:24px auto 0;color:var(--muted);font-size:18px}
 .shelf{display:flex;justify-content:center;align-items:flex-end;gap:clamp(8px,2vw,24px);margin:56px 0 40px;flex-wrap:wrap}
 .cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 /* placeholdery na mockupy */
@@ -92,6 +92,8 @@ img.cover{height:auto;display:block;box-shadow:0 18px 40px rgba(74,69,59,.28)}
 .cmp>div{padding:32px;border:1px solid var(--line)}
 .cmp>div+div{background:#7C8768;color:#FBF6EF;border-color:#7C8768}
 .cmp h3{font-size:28px;margin-bottom:12px}
+img.zap{height:1.15em;width:auto;vertical-align:-0.28em;display:inline-block}
+.cmp h3 img.zap.z3{height:1.25em;vertical-align:-0.35em}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:32px;margin-top:48px}
 .stats b{display:block;font-family:var(--serif);font-weight:400;font-size:48px;line-height:1;color:var(--accent)}
 .stats span{font-size:13px;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
@@ -119,13 +121,13 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 <section class="hero"><div class="in">
 <p class="eyebrow">Alchemiczny Kalendarz i Dziennik Lunarny · cykl • rezonans • refleksja</p>
 <h1><img class="ttl" src="img/tytul-resonance-2027.webp" alt="re:Sonance 2027" width="1600" height="197"></h1>
-<p class="lead">Posłuchaj Księżyca w rytmie Swojej Duszy. Kalendarz lunarny i dwa tony na każdy dzień roku.</p>
+<p class="lead">Posłuchaj Księżyca w rytmie Swojej Duszy.<br>Kalendarz lunarny i dwa tony na każdy dzień roku.</p>
 <div class="shelf">
   <button type="button" class="ph thumb" data-open aria-label="Zobacz wszystkie kalendarze roczne">kalendarz<br>roczny 1</button>
   <img class="cover big" src="img/okladka-plaska.webp" alt="Okładka kalendarza re:Sonance 2027" width="1000" height="1414" fetchpriority="high">
   <button type="button" class="ph thumb" data-open aria-label="Zobacz wszystkie kalendarze roczne">kalendarz<br>roczny 2</button>
 </div>
-<p class="announce">Premiera re:Sonance™ 2027 w nowiu 9 listopada 2026, w pierwszej kolejności dla subskrybentów.</p>
+<p class="announce">Premiera re:Sonance™ 2027 w nowiu 9 listopada 2026,<br>w pierwszej kolejności dla subskrybentów.</p>
 <div class="cta"><a class="btn" href="https://www.reualchemy.com/s/resonance-2027" target="_blank" rel="noopener">☾ zapisuję się na re:Sonance ♫ 2027</a><a class="btn alt" href="#zeszyt">Poznaj kalendarz</a><button type="button" class="btn alt" data-open>Zobacz wszystkie kalendarze roczne</button></div>
 <p class="fine">Zapisujesz się na listę oczekujących na kalendarz. W mailu powitalnym znajdziesz wszystko, co potrzebne.</p>
 <p class="note">Szare pola to miejsca na mockupy okładki.</p>
@@ -148,9 +150,9 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 </div></div></section>
 
 <section id="zeszyt" class="ruled"><div class="in">
-<p class="eyebrow">Co wyróżnia kalendarz</p><h2>Zwykły kalendarz a re:Sonance</h2>
-<div class="cmp"><div><h3>Zwykły kalendarz</h3><p>Każdy dzień wygląda tak samo i milczy.</p></div>
-<div><h3>re:Sonance 2027</h3><p>Każdy dzień ma fazę, znak, wskazówkę, na czym warto się skupić, i własne dwa tony do posłuchania.</p></div></div>
+<p class="eyebrow">Co wyróżnia kalendarz</p><h2>Zwykły kalendarz lunarny a <img class="zap" src="img/resonance-ciemny.webp" alt="re:Sonance" width="900" height="173"></h2>
+<div class="cmp"><div><h3>Zwykły kalendarz lunarny</h3><p>Każdy dzień wygląda tak samo i milczy.</p></div>
+<div><h3><img class="zap z3" src="img/resonance-2027-jasny.webp" alt="re:Sonance 2027" width="1200" height="136"></h3><p>Każdy dzień ma fazę, znak, wskazówkę, na czym warto się skupić, i własne dwa tony do posłuchania.</p></div></div>
 <div class="stats">
 <div><b>2</b><span>tony na każdy dzień</span></div><div><b>…</b><span>stron</span></div><div><b>…</b><span>tygodni</span></div><div><b>…</b><span>nowiów i pełni</span></div><div><b>…</b><span>cm format</span></div></div>
 <p class="note">Liczby do uzupełnienia z finalnego projektu.</p>
@@ -190,7 +192,7 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 
 <section id="lista"><div class="in" style="text-align:center">
 <p class="eyebrow">Lista oczekujących</p><h2>Bądź wśród pierwszych</h2>
-<p class="lede" style="margin-inline:auto">Premiera w nowiu 9 listopada 2026, w pierwszej kolejności dla subskrybentów.</p>
+<p class="lede" style="margin-inline:auto;max-width:60ch">Premiera w nowiu 9 listopada 2026,<br>w pierwszej kolejności dla subskrybentów.</p>
 <div class="cta" style="margin-top:32px"><a class="btn" href="https://www.reualchemy.com/s/resonance-2027" target="_blank" rel="noopener">☾ zapisuję się na re:Sonance ♫ 2027</a></div>
 <p class="fine">Zapisujesz się na listę oczekujących na kalendarz. W mailu powitalnym znajdziesz wszystko, co potrzebne.</p>
 </div></section>
