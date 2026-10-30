@@ -39,6 +39,9 @@ nav a{color:var(--muted);text-decoration:none}
 .hero h1 .ttl{width:min(100%,860px);height:auto;display:inline-block}
 .hero .lead{max-width:60ch;margin:24px auto 0;color:var(--muted);font-size:18px}
 .shelf{display:flex;justify-content:center;align-items:flex-end;gap:clamp(8px,2vw,24px);margin:56px 0 40px;flex-wrap:wrap}
+.shelf{align-items:center;gap:clamp(14px,3vw,32px)}
+.shelf>.thumb,.shelf>.cover{width:clamp(90px,24vw,220px);height:auto;aspect-ratio:210/297;object-fit:cover}
+.shelf>.cover{box-shadow:0 8px 24px rgba(74,69,59,.22);outline:1px solid #b8964a;outline-offset:6px}
 .cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 /* placeholdery na mockupy */
 .ph{background:var(--ph);color:var(--ph-fg);display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border:1px dashed var(--ph-fg);padding:12px}
@@ -109,8 +112,10 @@ img.zap{height:1.15em;width:auto;vertical-align:-0.28em;display:inline-block}
 .moons{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:40px}
 .moons .ph{aspect-ratio:1;flex-direction:column;gap:4px}
 .moons b{font-family:var(--serif);font-size:20px;font-weight:400;text-transform:none;letter-spacing:0;color:var(--fg)}
-.sheets{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-top:40px}
-.sheet img{display:block;width:100%;height:auto;margin-bottom:16px;box-shadow:0 6px 18px rgba(74,69,59,.18)}
+.sheets{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px 32px;margin-top:40px}
+.sheet img{display:block;width:100%;height:auto;box-shadow:0 6px 18px rgba(74,69,59,.18)}
+.sheet .pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.sheet .stack{display:grid;gap:12px;margin-bottom:16px}
 .sheet h3{font-size:24px}
 .sheet p{font-size:14px;color:var(--muted)}
 .tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
@@ -180,12 +185,15 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 </div></section>
 
 <section id="karty" class="band"><div class="in">
-<p class="eyebrow">Dodatkowo</p><h2>Kalendarze roczne</h2>
-<p class="lede">Kalendarze roczne na jednej stronie. Wybierz jeden albo zbierz komplet.</p>
+<p class="eyebrow">Dodatkowo</p><h2>Kalendarze roczne i biurkowe</h2>
+<p class="lede">Kalendarze roczne na jednej stronie i biurkowe. Każdy w wersji jasnej i ciemnej. Wybierz jeden albo zbierz komplet.</p>
 <div class="sheets">
-<div class="sheet"><img src="img/kal-1.webp" alt="Pionowy, wersja jasna" width="640" height="905" loading="lazy"><span class="tag">roczny</span><h3>Pionowy, wersja jasna</h3><p>Wszystkie miesiące w kolumnach na jednej stronie.</p></div>
-<div class="sheet"><img src="img/kal-3.webp" alt="Spirala, wersja jasna" width="640" height="905" loading="lazy"><span class="tag">roczny</span><h3>Spirala, wersja jasna</h3><p>Rok jako spirala księżyców.</p></div>
-<div class="sheet"><img src="img/kal-5.webp" alt="Miesiące w kręgach" width="640" height="905" loading="lazy"><span class="tag">roczny</span><h3>Miesiące w kręgach</h3><p>Każdy miesiąc w osobnym kręgu.</p></div>
+<div class="sheet"><div class="pair"><img src="img/kal-1.webp" alt="Pionowy, jasny" width="640" height="905" loading="lazy"><img src="img/kal-2.webp" alt="Pionowy, ciemny" width="640" height="905" loading="lazy"></div><span class="tag">roczny</span><h3>Pionowy</h3><p>Wszystkie miesiące w kolumnach na jednej stronie.</p></div>
+<div class="sheet"><div class="pair"><img src="img/kal-3.webp" alt="Spirala, jasny" width="640" height="905" loading="lazy"><img src="img/kal-4.webp" alt="Spirala, ciemny" width="640" height="905" loading="lazy"></div><span class="tag">roczny</span><h3>Spirala</h3><p>Rok jako spirala księżyców.</p></div>
+<div class="sheet"><div class="pair"><img src="img/kal-5.webp" alt="Miesiące w kręgach, jasny" width="640" height="905" loading="lazy"><img src="img/kal-6.webp" alt="Miesiące w kręgach, ciemny" width="640" height="905" loading="lazy"></div><span class="tag">roczny</span><h3>Miesiące w kręgach</h3><p>Każdy miesiąc w osobnym kręgu.</p></div>
+<div class="sheet"><div class="stack"><img src="img/kal-7.webp" alt="Poziomy, jasny" width="1000" height="707" loading="lazy"><img src="img/kal-8.webp" alt="Poziomy, ciemny" width="1000" height="707" loading="lazy"></div><span class="tag">roczny</span><h3>Poziomy</h3><p>Cały rok w poziomie, od września do września.</p></div>
+<div class="sheet"><div class="stack"><img src="img/biurko-trojkaty.webp" alt="Kalendarz biurkowy do samodzielnego złożenia: trójkąt z miesiącem i trójkąt ze zbiorczym widokiem roku" width="1500" height="683" loading="lazy"></div><span class="tag">biurkowy</span><h3>Biurkowy do złożenia</h3><p>12 trójkątów do samodzielnego złożenia: na jednym boku miesiąc, na drugim zbiorczy widok roku.</p></div>
+<div class="sheet"><div class="stack"><img src="img/biurko-spiralka.webp" alt="Kalendarz biurkowy na spiralce: strona miesiąca i zbiorczy widok roku" width="1500" height="683" loading="lazy"></div><span class="tag">biurkowy</span><h3>Biurkowy na spiralce</h3><p>Kalendarz na spiralce: zbiorczy widok roku i przykładowa strona miesiąca.</p></div>
 </div></div></section>
 
 <section id="wersje" class="ruled"><div class="in">
@@ -226,10 +234,8 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 <figure><img src="img/kal-6.webp" alt="Miesiące w kręgach, ciemny" width="640" height="905" loading="lazy"><figcaption>Miesiące w kręgach, ciemny</figcaption></figure>
 <figure class="wide"><img src="img/kal-7.webp" alt="Poziomy, jasny" width="1000" height="707" loading="lazy"><figcaption>Poziomy, jasny</figcaption></figure>
 <figure class="wide"><img src="img/kal-8.webp" alt="Poziomy, ciemny" width="1000" height="707" loading="lazy"><figcaption>Poziomy, ciemny</figcaption></figure>
-<figure class="wide"><img src="img/biurko-2027-rok.webp" alt="Biurkowy 2027, strona roczna" width="1000" height="523" loading="lazy"><figcaption>Biurkowy 2027, strona roczna</figcaption></figure>
-<figure class="wide"><img src="img/biurko-2027-miesiac.webp" alt="Biurkowy 2027, strona miesiąca" width="1000" height="548" loading="lazy"><figcaption>Biurkowy 2027, strona miesiąca</figcaption></figure>
-<figure class="wide"><img src="img/biurko-num-rok.webp" alt="Biurkowy numerologiczny, strona roczna" width="1000" height="523" loading="lazy"><figcaption>Biurkowy numerologiczny, strona roczna</figcaption></figure>
-<figure class="wide"><img src="img/biurko-num-miesiac.webp" alt="Biurkowy numerologiczny, strona miesiąca" width="1000" height="548" loading="lazy"><figcaption>Biurkowy numerologiczny, strona miesiąca</figcaption></figure>
+<figure class="wide"><img src="img/biurko-trojkaty.webp" alt="Kalendarz biurkowy do samodzielnego złożenia: trójkąt z miesiącem i trójkąt ze zbiorczym widokiem roku" width="1500" height="683" loading="lazy"><figcaption>Biurkowy do złożenia</figcaption></figure>
+<figure class="wide"><img src="img/biurko-spiralka.webp" alt="Kalendarz biurkowy na spiralce: strona miesiąca i zbiorczy widok roku" width="1500" height="683" loading="lazy"><figcaption>Biurkowy na spiralce</figcaption></figure>
 </div></div></div>
 <script>
 (function(){var ov=document.getElementById('ov');function o(){ov.hidden=false;document.body.style.overflow='hidden'}function c(){ov.hidden=true;document.body.style.overflow=''}
