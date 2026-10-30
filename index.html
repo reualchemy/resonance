@@ -7,7 +7,21 @@
 <meta name="description" content="Alchemiczny Kalendarz i Dziennik Lunarny re:Sonance 2027. Dwa tony na każdy dzień roku. Lista oczekujących.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap">
 </head>
-<body><style>
+<body>
+<div class="bgfx" aria-hidden="true"></div>
+<svg class="scrollline" id="sl" aria-hidden="true" viewBox="0 0 200 2000" preserveAspectRatio="xMidYMid meet" fill="none">
+<path id="sl0" d="M 100 0 C 30 80, 170 160, 100 240 S 30 400, 100 480 C 170 560, 30 640, 100 720 S 170 880, 100 960 C 30 1040, 170 1120, 100 1200 S 30 1360, 100 1440 C 170 1520, 30 1600, 100 1680 S 170 1840, 100 1920 C 60 1960, 140 1980, 100 2000" stroke="#b8964a" stroke-opacity=".28" stroke-width="1.5"/>
+<path id="sl1" d="M 100 0 C 30 80, 170 160, 100 240 S 30 400, 100 480 C 170 560, 30 640, 100 720 S 170 880, 100 960 C 30 1040, 170 1120, 100 1200 S 30 1360, 100 1440 C 170 1520, 30 1600, 100 1680 S 170 1840, 100 1920 C 60 1960, 140 1980, 100 2000" stroke="#b8964a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="sld"><circle r="11" fill="#b8964a" fill-opacity=".25"/><circle r="5" fill="#b8964a"/><circle r="2" fill="#FBF6EF"/></g>
+</svg>
+<script>
+(function(){try{var p=document.getElementById('sl1'),d=document.getElementById('sld');if(!p||!d)return;
+var L=p.getTotalLength();p.style.strokeDasharray=L;
+function u(){var h=document.documentElement.scrollHeight-window.innerHeight;var t=h>0?Math.min(1,Math.max(0,window.scrollY/h)):0;
+p.style.strokeDashoffset=L*(1-t);var q=p.getPointAtLength(L*t);d.setAttribute('transform','translate('+q.x+','+q.y+')');}
+window.addEventListener('scroll',u,{passive:true});window.addEventListener('resize',u);u();}catch(e){}})();
+</script>
+<style>
 /* Układ: długa strona sprzedażowa, jedna kolumna, duże sekcje na przemian jasne/ciemne, okładka jako bohater */
 :root{
   --bg:#FBF6EF; --fg:#4A453B; --muted:#6b6558; --band:#DACBB9; --band-fg:#4A453B;
@@ -39,10 +53,13 @@ nav a{color:var(--muted);text-decoration:none}
 .hero h1 .ttl{width:min(100%,860px);height:auto;display:inline-block}
 .hero .lead{max-width:60ch;margin:24px auto 0;color:var(--muted);font-size:18px}
 .shelf{display:flex;justify-content:center;align-items:flex-end;gap:clamp(8px,2vw,24px);margin:56px 0 40px;flex-wrap:wrap}
-.shelf{align-items:center;gap:clamp(14px,3vw,32px)}
-.shelf>.thumb,.shelf>.cover,.shelf>.cover.big{width:clamp(90px,24vw,220px);height:auto;aspect-ratio:210/297;object-fit:cover}
+.shelf{align-items:center;gap:clamp(8px,2.5vw,36px);flex-wrap:nowrap}
+.shelf>.thumb,.shelf>.cover,.shelf>.cover.big{width:clamp(100px,27vw,290px);height:auto;aspect-ratio:210/297;object-fit:cover}
 .shelf>.thumb img{width:100%;height:100%;object-fit:cover}
 .shelf>.cover{box-shadow:0 8px 24px rgba(74,69,59,.22);outline:1px solid #b8964a;outline-offset:6px}
+.bgfx{position:fixed;inset:0;z-index:-1;pointer-events:none;background:var(--bg) url(img/tlo.webp) center/cover no-repeat}
+.scrollline{display:none;position:fixed;top:0;right:8px;height:100vh;width:64px;z-index:0;pointer-events:none}
+@media (min-width:1280px){.scrollline{display:block}}
 .cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 /* placeholdery na mockupy */
 .ph{background:var(--ph);color:var(--ph-fg);display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border:1px dashed var(--ph-fg);padding:12px}
@@ -81,7 +98,7 @@ img.cover{height:auto;display:block;box-shadow:0 18px 40px rgba(74,69,59,.28)}
 .faq summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .faq p{padding:0 0 24px;max-width:62ch;color:var(--muted)}
 .fine{font-size:13px;color:var(--muted);margin-top:16px}
-.announce{max-width:620px;margin:0 auto 28px;padding:18px 24px;background:var(--ph);font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.35}
+.announce{max-width:620px;margin:0 auto 28px;padding:18px 24px;background:var(--ph);font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.35}
 .tones{display:grid;gap:16px}
 .tone{display:flex;align-items:center;gap:16px;padding:20px;border:1px solid var(--line)}
 .tone b{display:block;font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.2}
@@ -137,7 +154,7 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 <div class="shelf">
   <button type="button" class="thumb" data-open aria-label="Zobacz wszystkie kalendarze roczne"><img src="img/kal-2.webp" alt="Kalendarz roczny, wersja ciemna" width="640" height="905"></button>
   <img class="cover big" src="img/okladka-plaska.webp" alt="Okładka kalendarza re:Sonance 2027" width="1000" height="1414" fetchpriority="high">
-  <button type="button" class="thumb" data-open aria-label="Zobacz wszystkie kalendarze roczne"><img src="img/kal-3.webp" alt="Kalendarz roczny w spirali" width="640" height="905"></button>
+  <button type="button" class="thumb" data-open aria-label="Zobacz wszystkie kalendarze roczne"><img src="img/kal-4.webp" alt="Kalendarz roczny w spirali, wersja ciemna" width="640" height="905"></button>
 </div>
 <p class="announce">Premiera re:Sonance™ 2027 w nowiu 9 listopada 2026,<br>w pierwszej kolejności dla subskrybentów.</p>
 <div class="cta"><a class="btn" href="https://www.reualchemy.com/s/resonance-2027" target="_blank" rel="noopener">☾ zapisuję się na re:Sonance ♫ 2027</a><a class="btn alt" href="#zeszyt">Poznaj kalendarz</a><button type="button" class="btn alt" data-open>Zobacz wszystkie kalendarze roczne</button></div>
