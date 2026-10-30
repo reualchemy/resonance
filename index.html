@@ -79,8 +79,8 @@ nav a{color:var(--muted);text-decoration:none}
 .hero{text-align:center}
 .hero h1{font-size:clamp(56px,12vw,140px);letter-spacing:-.01em}
 .hero h1 em{color:var(--accent)}
-.hero h1{font-size:0;line-height:0}
-.hero h1 .ttl{width:min(100%,860px);height:auto;display:inline-block}
+.hero h1{font-size:clamp(30px,5.6vw,76px);line-height:1.45;letter-spacing:0;color:var(--fg)}
+.hero h1 sup.tm,.hero h1 .yr{color:#AE8628}
 .hero .lead{max-width:60ch;margin:24px auto 0;color:var(--muted);font-size:18px}
 .shelf{display:flex;justify-content:center;align-items:flex-end;gap:clamp(8px,2vw,24px);margin:56px 0 40px;flex-wrap:wrap}
 .shelf{align-items:center;gap:clamp(8px,2.5vw,36px);flex-wrap:nowrap}
@@ -232,7 +232,12 @@ img.zap{height:1.15em;width:auto;vertical-align:-0.28em;display:inline-block}
 .sheet h3{font-size:24px}
 .sheet p{font-size:14px;color:var(--muted)}
 .tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
-.zf{font-family:"zapfino-extra-lt-pro","Snell Roundhand","Apple Chancery",cursive;font-weight:400;font-size:.8em;line-height:1;letter-spacing:0}
+.zf{font-family:"zapfino-extra-lt-pro","Snell Roundhand","Apple Chancery",cursive;font-weight:400;font-size:1.3em;line-height:1;letter-spacing:0;color:#AE8628}
+.zn{font-family:"zapfino-extra-lt-pro","Snell Roundhand","Apple Chancery",cursive;font-weight:400;font-size:.85em;line-height:1.6;letter-spacing:0}
+sup.tm{font-size:.38em;line-height:0;vertical-align:super;font-family:var(--serif)}
+#dzwiek h2{line-height:1.5}
+#dzwiek .tonlink{margin-top:16px}
+#dzwiek .tonlink a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 .glosy{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-top:36px}
 .glosy figure{margin:0;width:150px}
 .glosy button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:10px}
@@ -256,7 +261,7 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 
 <section class="hero"><div class="in">
 <p class="eyebrow">Alchemiczny Kalendarz i Dziennik Lunarny · cykl • rezonans • refleksja</p>
-<h1><img class="ttl" src="img/tytul-resonance-2027.webp" alt="re:Sonance 2027" width="1600" height="197"></h1>
+<h1><span class="zf">re:Sonance</span><sup class="tm">™</sup> <span class="zf yr">2027</span></h1>
 <p class="lead">Posłuchaj Księżyca w rytmie Swojej Duszy.<br>Kalendarz lunarny i dwa tony na każdy dzień roku.</p>
 <div class="shelf">
   <a class="thumb" href="#pakiety" aria-label="Zobacz kalendarze w pakietach i produktach"><img src="img/kal-2.webp" alt="Kalendarz roczny, wersja ciemna" width="640" height="905"></a>
@@ -300,15 +305,16 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 <div class="ph mock">mockup: okładka w scenerii</div></div></section>
 
 <section id="srodek" class="ruled"><div class="in">
-<p class="eyebrow">Zajrzyj do środka</p><h2><span class="zf">re:Sonance</span>™ od środka</h2>
+<p class="eyebrow">Zajrzyj do środka</p><h2><span class="zf">re:Sonance</span><sup class="tm">™</sup> od środka</h2>
 <p class="lede">Przekartkuj kalendarz: tygodnie, nowie, pełnie i strony z tonami.</p>
 <div class="flip"><div class="ph mock">flipbook: przekartkuj kalendarz</div></div>
 </div></section>
 
 <section id="dzwiek" class="ruled"><div class="in two">
-<div><p class="eyebrow">Kalendarz i dźwięk</p><h2>Alchemia Dwóch Tonów™</h2><p class="tag" style="margin:14px 0 16px">Dwa tony na każdy dzień</p>
+<div><p class="eyebrow">Kalendarz i dźwięk</p><h2><span class="zn">Alchemia Dwóch Tonów</span><sup class="tm">™</sup></h2><p class="tag" style="margin:14px 0 16px">Dwa tony na każdy dzień</p>
 <p class="lede">Każdy dzień kalendarza ma własną parę nagrań, Ton 1 i Ton 2. Czytasz dzień i słuchasz dnia.</p>
 <p class="lede">Tony zmieniają się razem z fazą Księżyca: od ciszy w nowiu, przez coraz wyraźniejsze brzmienie, do pełni, a potem znów ku ciszy. W dni zaćmień dochodzi druga para tonów.</p>
+<p class="lede tonlink"><a href="#faq-tony" id="tonlink">O co chodzi z tymi dwoma tonami? Po co są i czemu służą?</a></p>
 <div class="cta" style="margin-top:24px;justify-content:flex-start"><a class="btn olive" href="https://www.reualchemy.com/s/resonance-2027" target="_blank" rel="noopener">☾ zapisuję się na re:Sonance ♫ 2027</a></div>
 </div>
 <div class="tones">
@@ -330,7 +336,7 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 <article class="pc"><div class="gal"><div class="track"><div class="slide"><img src="img/okladka-plaska.webp" alt="Okładka wersji elektronicznej" loading="lazy"></div><div class="slide"><div class="ph">widok na ekranie</div></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab">E°1</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">na start</span><h3>Kalendarz · wersja elektroniczna (PDF druk)</h3></div></article>
 <article class="pc"><div class="gal"><div class="track"><div class="slide"><img src="img/okladka-druk-uszlachetnienie.webp" alt="Okładka ze złoceniem" loading="lazy"></div><div class="slide"><div class="ph">widok kalendarza</div></div><div class="slide"><div class="ph">detal złocenia</div></div></div><span class="lab">E°2</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">jeśli zbierze się dość osób</span><h3>Kalendarz · wersja drukowana · Limited Edition</h3></div></article>
 <article class="pc"><div class="gal"><div class="track"><div class="slide"><div class="ph">zdjęcie w scenerii</div></div><div class="slide"><div class="ph">widok na tablecie</div></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab">D°2</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">wkrótce</span><h3>Wersja na GoodNotes / Notability</h3></div></article>
-<article class="pc"><div class="gal"><div class="track"><div class="slide"><div class="ph">zdjęcie w scenerii</div></div><div class="slide"><div class="ph">widok w aplikacji</div></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab">D°1</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">wkrótce</span><h3><span class="zf">re:Sonance</span>™ w Google Calendar</h3></div></article>
+<article class="pc"><div class="gal"><div class="track"><div class="slide"><div class="ph">zdjęcie w scenerii</div></div><div class="slide"><div class="ph">widok w aplikacji</div></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab">D°1</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">wkrótce</span><h3><span class="zf">re:Sonance</span><sup class="tm">™</sup> w Google Calendar</h3></div></article>
 <article class="pc"><div class="gal"><div class="track"><div class="slide"><div class="ph">zdjęcie w scenerii</div></div><div class="slide"><div class="ph">kamienie w zestawie</div></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab">K°1</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">wkrótce</span><h3>Zestaw naturalnych kamieni na każdy Nów i Pełnię</h3></div></article>
 <article class="pc"><div class="gal"><div class="track"><div class="slide"><div class="ph">zdjęcie w scenerii</div></div><div class="slide fit"><img src="img/biurko-trojkaty.webp" alt="Biurkowy do złożenia" loading="lazy"></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab">B°1</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">kalendarz biurkowy</span><h3>Kalendarz biurkowy do złożenia</h3></div></article>
 <article class="pc"><div class="gal"><div class="track"><div class="slide"><img src="img/scena-biurkowy-spiralka.webp" alt="Ciemny kalendarz biurkowy na biurku" loading="lazy"></div><div class="slide fit"><img src="img/biurko-spiralka.webp" alt="Biurkowy na spiralce" loading="lazy"></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab">B°2</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">kalendarz biurkowy</span><h3>Kalendarz biurkowy na spiralce · ciemny</h3></div></article>
@@ -348,7 +354,7 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 </div></div></section>
 
 <section id="lista"><div class="in" style="text-align:center">
-<p class="eyebrow">Lista oczekujących</p><h2>Ten rok przejdziemy razem</h2>
+<p class="eyebrow">Lista oczekujących</p><h2>Zapraszam Cię do przejścia tego roku razem...</h2>
 <p class="lede" style="margin-inline:auto;max-width:60ch">Zamawiając egzemplarz, dołączasz do zamkniętej społeczności<br>pokrewnych Dusz, z którymi przejdziesz ten rok w rytmie Księżyca.</p>
 <p class="lede" style="margin-inline:auto;max-width:60ch;margin-top:12px">Premiera w nowiu 9 listopada 2026,<br>w pierwszej kolejności dla subskrybentów.</p>
 <div class="cta" style="margin-top:32px"><a class="btn olive" href="https://www.reualchemy.com/s/resonance-2027" target="_blank" rel="noopener">☾ zapisuję się na re:Sonance ♫ 2027</a></div>
@@ -361,8 +367,8 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 <details><summary>Czy muszę znać astrologię?</summary><p>Nie. Każdy dzień ma fazę, znak i krótką wskazówkę, na czym warto się skupić. Przy każdym nowiu i każdej pełni karta tłumaczy, co dzieje się na niebie.</p></details>
 <details><summary>Co znaczy "syderycznie" i dlaczego tak liczysz?</summary><p>Współczesna popularna astrologia zachodnia – gazety, aplikacje, codzienne horoskopy – posługuje się zodiakiem tropikalnym. To podział, który powstał ponad dwa tysiące lat temu. Drogę Słońca podzielono na dwanaście równych części po 30 stopni, licząc od punktu równonocy wiosennej.</p><p>Rzecz w tym, że kosmos zmiennym jest i jakoś się nie zatrzymał, żeby na nas poczekać. Oś Ziemi kołysze się powoli (zjawisko to nazywa się naukowo precesją), przesuwając układ gwiazd względem naszego kalendarza o jeden stopień na około 72 lata. Czyli gdyby Twoja prababcia urodziła się tego samego dnia roku, o tej samej godzinie i w tym samym miejscu co Ty, tylko 72 lata wcześniej, jej planety stałyby na tle gwiazd przesunięte względem Twoich o mniej więcej jeden stopień. W skali 72 lat jeden stopień może nie robi aż takiej różnicy, ale przez ponad dwa tysiące lat uzbierało się już ok. 25 stopni – a to robi różnicę, co za chwilę pokażę na przykładzie pełni z 28 sierpnia 2026.</p><p>Zodiak syderyczny koryguje to przesunięcie za pomocą tzw. ayanamsy (w tym kalendarzu – ayanamsa Fagan-Bradley, standard przyjęty w zachodniej szkole astrologii syderycznej) i wraca do pozycji, w których gwiazdozbiory faktycznie stoją na niebie dzisiaj. To znak, pod którym naprawdę znajduje się Słońce czy Księżyc w danym momencie – nie znak, który „powinien” tam być według kalendarza sprzed dwóch tysięcy lat. Zodiakiem syderycznym posługuje się między innymi astrologia wedyjska i tybetańska.</p></details>
 <details><summary>Czym znaki w kalendarzu różnią się od tych z horoskopów?</summary><p>Same znaki zodiaku i ich znaczenie niczym się nie różnią. Różnica jest tylko w wyliczeniach: w którym znaku stoi w danym momencie Księżyc i pozostałe planety. Większość horoskopów liczy zodiak tropikalnie, od początku pór roku, a kalendarz liczy syderycznie, od gwiazd. Dziś te dwa zegary dzieli około 25 stopni, więc Księżyc i Słońce stoją w kalendarzu zwykle o jeden znak wcześniej. Ten sam nów może być w Pannie w kalendarzu, a w Wadze w horoskopie z gazety. Faza Księżyca (nów to nów) i układy między planetami są takie same w obu systemach. Przy każdym nowiu i każdej pełni dopisuję krótką notkę także dla zodiaku tropikalnego, więc możesz sprawdzić na sobie, który opis jest Ci bliższy. Pamiętaj, że to jest jedynie wskazówka: nie daje gotowych rozwiązań, ale pomaga zadać sobie odpowiednie pytania.</p></details>
-<details><summary>O co chodzi z tymi dwoma tonami? Po co są i czemu służą?</summary><p>Czy zastanawiałaś się kiedyś, dlaczego tradycyjna praca z intencjami bywa tak trudna? Często próbujemy dokonać zmiany wyłącznie na poziomie umysłu, podczas gdy nasze ciało pozostaje spięte i zablokowane w starych schematach obronnych. Prawdziwa transformacja wymaga zestrojenia obu tych poziomów jednocześnie.</p><p>Aby to umożliwić, stworzyłam Alchemię Dwóch Tonów™ (Dual-Resonance Alchemy™). To pionierski, autorski system neuro-akustycznej synchronizacji, który łączy prastarą mądrość astrologii, somatyczną pracę z żywiołami oraz fizykę uzdrawiających wibracji.</p><p>To nie jest terapia ani leczenie, a jedynie wspomaganie Twojego układu nerwowego poprzez muzykoterapię.</p></details>
-<details><summary>Jak odtwarza się tony?</summary><p>[Uzupełnij: sposób dostępu do nagrań, np. kod w kalendarzu, strona z odtwarzaczem lub pliki do pobrania.]</p></details>
+<details id="faq-tony"><summary>O co chodzi z tymi dwoma tonami? Po co są i czemu służą?</summary><p>Czy zastanawiałaś się kiedyś, dlaczego tradycyjna praca z intencjami bywa tak trudna? Często próbujemy dokonać zmiany wyłącznie na poziomie umysłu, podczas gdy nasze ciało pozostaje spięte i zablokowane w starych schematach obronnych. Prawdziwa transformacja wymaga zestrojenia obu tych poziomów jednocześnie.</p><p>Aby to umożliwić, stworzyłam Alchemię Dwóch Tonów™ (Dual-Resonance Alchemy™). To pionierski, autorski system neuro-akustycznej synchronizacji, który łączy prastarą mądrość astrologii, somatyczną pracę z żywiołami oraz fizykę uzdrawiających wibracji.</p><p>To nie jest terapia ani leczenie, a jedynie wspomaganie Twojego układu nerwowego poprzez muzykoterapię.</p></details>
+<details><summary>Jak odtwarzać te tony?</summary><p>[Uzupełnij: sposób dostępu do nagrań, np. kod w kalendarzu, strona z odtwarzaczem lub pliki do pobrania.]</p></details>
 <details><summary>Czy mogę używać kalendarza w pracy z grupą?</summary><p>Kalendarz jest wyłącznie do użytku osobistego. Prowadzenie sesji, warsztatów i kursów z jego użyciem wymaga licencji.</p></details>
 <details><summary>Czy będzie wersja drukowana?</summary><p>Na start jest wersja elektroniczna. Wersja drukowana powstanie, jeśli na liście oczekujących zbierze się odpowiednia liczba chętnych.</p></details>
 <details><summary>Kiedy premiera i jak się o niej dowiem?</summary><p>Premiera jest planowana na [DATA]. Zapisz się na listę oczekujących, a osoby z listy dowiedzą się pierwsze.</p></details>
@@ -420,6 +426,11 @@ function all(){s.forEach(function(e){e.classList.add('vis')})}
 if(!('IntersectionObserver' in window)){all();return}
 var o=new IntersectionObserver(function(r){r.forEach(function(x){if(x.isIntersecting){x.target.classList.add('vis');o.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px'});
 s.forEach(function(e){o.observe(e)});setTimeout(all,6000);})();
+</script>
+<script>
+(function(){var a=document.getElementById('tonlink'),d=document.getElementById('faq-tony');if(!a||!d)return;
+a.addEventListener('click',function(e){e.preventDefault();d.open=true;var s=document.getElementById('pytania');if(s){var i=s.querySelector('.in');if(i)i.classList.add('vis')}
+d.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'center'})});})();
 </script>
 <footer><div class="in"><span>re:U Alchemy Studio · re:Sonance™ · Alchemia Dwóch Tonów™</span><span>Regulamin · Kontakt · Instagram · Substack</span></div></footer>
 <script>
