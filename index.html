@@ -6,6 +6,25 @@
 <title>re:Sonance 2027</title>
 <meta name="description" content="Alchemiczny Kalendarz i Dziennik Lunarny re:Sonance 2027. Dwa tony na każdy dzień roku. Lista oczekujących.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap">
+<style>
+/* wersja: paski kolorów przy każdej sekcji */
+header,section,footer{position:relative}
+header::before,section::before,footer::before{content:"";position:absolute;left:0;top:0;bottom:0;width:18px;background:var(--st,transparent)}
+header{--st:#D3DDE2}
+.hero{--st:#BECCD3}
+#intro{--st:#A9BAC4}
+#pomoc{--st:#DDE2D2}
+section.band:not(#pakiety):not(#pomoc){--st:#C7CDB8}
+#srodek{--st:#AEB89A}
+#dzwiek{--st:#F3EAD0}
+#nowie{--st:#EADDB8}
+#pakiety{--st:#D8C68C}
+#lista{--st:#EBD9CE}
+#pytania{--st:#DDBFAE}
+footer{--st:#C9A18A}
+.ph{background:rgba(251,246,239,.55)}
+@media(max-width:760px){header::before,section::before,footer::before{width:8px}}
+</style>
 </head>
 <body>
 <div class="bgfx" aria-hidden="true"></div>
@@ -85,12 +104,29 @@ nav a{color:var(--muted);text-decoration:none}
 .flip .ph{aspect-ratio:16/9}
 @media(max-width:760px){.trio,.help,.pack{grid-template-columns:1fr}.trio .ph{aspect-ratio:4/3}}
 footer{background:var(--band);color:var(--band-fg);margin-top:0}
+.mgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:32px}
+.mc{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:18px 10px;border:1px solid var(--line);background:rgba(251,246,239,.7);min-height:150px}
+.mc.nw{background:#4A453B;color:#FBF6EF;border-color:#4A453B}
+.mc .mi{font-size:22px;color:var(--accent)}.mc.nw .mi{color:#D4A840}
+.mc b{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600}
+.mc .md{font-size:13px;letter-spacing:.06em}.mc .mz{font-size:12px;opacity:.8}
+.mc .mx{font-size:11px;color:var(--accent);margin-top:4px}.mc.nw .mx{color:#D4A840}
+@media(max-width:980px){.mgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.mgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.arr{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:0;background:rgba(251,246,239,.9);color:#4A453B;font-size:20px;cursor:pointer;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.arr.l{left:10px}.arr.r{right:10px}
+.track{cursor:grab}
+#lista{background:rgba(74,69,59,.84);color:#FBF6EF}
+#lista h2,#lista .lede,#lista .fine{color:#FBF6EF}
+#lista .eyebrow{color:#D4A840}
+#lista .btn.olive{border-color:#FBF6EF}
+#pakiety.band{background:rgba(218,203,185,.62)}
 .pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:40px}
 .pc{background:#FBF6EF;border:1px solid var(--line);box-shadow:0 6px 22px rgba(74,69,59,.12);border-radius:6px;overflow:hidden}
 .gal{position:relative}
 .track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
 .track::-webkit-scrollbar{display:none}
-.slide{flex:0 0 100%;scroll-snap-align:center;aspect-ratio:4/5;background:#ECE3D6;display:flex;align-items:center;justify-content:center}
+.slide{flex:0 0 100%;scroll-snap-align:center;aspect-ratio:707/1000;background:#ECE3D6;display:flex;align-items:center;justify-content:center}
 .slide img{width:100%;height:100%;object-fit:cover;display:block}
 .slide.fit img{object-fit:contain}
 .slide .ph{width:100%;height:100%;border:0;background:#ECE3D6}
@@ -230,7 +266,8 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 
 <section class="band"><div class="in two">
 <div><h2>Podążaj za rytmem Księżyca.</h2>
-<p class="lede">Zaczynaj przy rosnącym, domykaj przy malejącym, zatrzymuj się w nowiu i świętuj w pełni. Rok ułożony w cykl, który możesz poczuć.</p></div>
+<p class="lede">Zaczynaj przy rosnącym, domykaj przy malejącym, zatrzymuj się w nowiu i świętuj w pełni. Rok ułożony w cykl, który możesz poczuć.</p>
+<div class="cta" style="margin-top:24px;justify-content:flex-start"><a class="btn olive" href="https://www.reualchemy.com/s/resonance-2027" target="_blank" rel="noopener">☾ zapisuję się na re:Sonance ♫ 2027</a></div></div>
 <div class="ph mock">mockup: okładka w scenerii</div></div></section>
 
 <section id="srodek" class="ruled"><div class="in">
@@ -252,10 +289,9 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 
 <section id="nowie"><div class="in">
 <p class="eyebrow">Nowie i pełnie</p><h2>Każdy nów i każda pełnia ma swoją kartę</h2>
-<div class="moons">
-<div class="ph"><b>Pełnia</b>data · znak</div><div class="ph"><b>Nów</b>data · znak</div><div class="ph"><b>Pełnia</b>data · znak</div><div class="ph"><b>Nów</b>data · znak</div>
-<div class="ph"><b>Pełnia</b>data · znak</div><div class="ph"><b>Nów</b>data · znak</div><div class="ph"><b>Pełnia</b>data · znak</div><div class="ph"><b>Nów</b>data · znak</div></div>
-<p class="note">Karty wypełnią się wszystkimi nowiami i pełniami roku, z ilustracjami.</p>
+<p class="lede">13 Nowiów, w tym 2 zaćmienia Słońca. 12 Pełni, w tym 4 zaćmienia Księżyca, jeden Blue Moon i jeden Black Moon.</p>
+<div class="mgrid"><div class="mc nw"><span class="mi">●</span><b>Nów</b><span class="md">07.01.2027</span><span class="mz">☽ w Strzelcu</span></div><div class="mc pl"><span class="mi">○</span><b>Pełnia</b><span class="md">22.01.2027</span><span class="mz">☽ w Raku</span><span class="mx">Wilczy Księżyc</span></div><div class="mc nw"><span class="mi">●</span><b>Nów</b><span class="md">06.02.2027</span><span class="mz">☽ w Koziorożcu</span><span class="mx">zaćmienie Słońca</span></div><div class="mc pl"><span class="mi">○</span><b>Pełnia</b><span class="md">21.02.2027</span><span class="mz">☽ we Lwie</span><span class="mx">Śnieżny Księżyc · zaćmienie Księżyca</span></div><div class="mc nw"><span class="mi">●</span><b>Nów</b><span class="md">08.03.2027</span><span class="mz">☽ w Wodniku</span></div><div class="mc pl"><span class="mi">○</span><b>Pełnia</b><span class="md">22.03.2027</span><span class="mz">☽ w Pannie</span><span class="mx">Robaczy Księżyc</span></div><div class="mc nw"><span class="mi">●</span><b>Nów</b><span class="md">07.04.2027</span><span class="mz">☽ w Rybach</span></div><div class="mc pl"><span class="mi">○</span><b>Pełnia</b><span class="md">21.04.2027</span><span class="mz">☽ w Wadze</span><span class="mx">Różowy Księżyc</span></div><div class="mc nw"><span class="mi">●</span><b>Nów</b><span class="md">06.05.2027</span><span class="mz">☽ w Baranie</span></div><div class="mc pl"><span class="mi">○</span><b>Pełnia</b><span class="md">20.05.2027</span><span class="mz">☽ w Skorpionie</span><span class="mx">Kwiatowy Księżyc · Blue Moon</span></div><div class="mc nw"><span class="mi">●</span><b>Nów</b><span class="md">04.06.2027</span><span class="mz">☽ w Byku</span></div><div class="mc pl"><span class="mi">○</span><b>Pełnia</b><span class="md">19.06.2027</span><span class="mz">☽ w Strzelcu</span><span class="mx">Truskawkowy Księżyc</span></div><div class="mc nw"><span class="mi">●</span><b>Nów</b><span class="md">04.07.2027</span><span class="mz">☽ w Bliźniętach</span></div><div class="mc pl"><span class="mi">○</span><b>Pełnia</b><span class="md">18.07.2027</span><span class="mz">☽ w Koziorożcu</span><span class="mx">Koźli Księżyc · zaćmienie Księżyca</span></div><div class="mc nw"><span class="mi">●</span><b>Nów</b><span class="md">02.08.2027</span><span class="mz">☽ w Raku</span><span class="mx">zaćmienie Słońca</span></div><div class="mc pl"><span class="mi">○</span><b>Pełnia</b><span class="md">17.08.2027</span><span class="mz">☽ w Koziorożcu</span><span class="mx">Jesiotrowy Księżyc · zaćmienie Księżyca</span></div><div class="mc nw"><span class="mi">●</span><b>Nów</b><span class="md">31.08.2027</span><span class="mz">☽ we Lwie</span><span class="mx">Black Moon</span></div><div class="mc pl"><span class="mi">○</span><b>Pełnia</b><span class="md">16.09.2027</span><span class="mz">☽ w Wodniku</span><span class="mx">Żniwny Księżyc</span></div><div class="mc nw"><span class="mi">●</span><b>Nów</b><span class="md">30.09.2027</span><span class="mz">☽ w Pannie</span></div><div class="mc pl"><span class="mi">○</span><b>Pełnia</b><span class="md">15.10.2027</span><span class="mz">☽ w Rybach</span><span class="mx">Myśliwski Księżyc</span></div><div class="mc nw"><span class="mi">●</span><b>Nów</b><span class="md">29.10.2027</span><span class="mz">☽ w Wadze</span></div><div class="mc pl"><span class="mi">○</span><b>Pełnia</b><span class="md">14.11.2027</span><span class="mz">☽ w Baranie</span><span class="mx">Bobrowy Księżyc</span></div><div class="mc nw"><span class="mi">●</span><b>Nów</b><span class="md">28.11.2027</span><span class="mz">☽ w Skorpionie</span></div><div class="mc pl"><span class="mi">○</span><b>Pełnia</b><span class="md">13.12.2027</span><span class="mz">☽ w Byku</span><span class="mx">Zimny Księżyc</span></div><div class="mc nw"><span class="mi">●</span><b>Nów</b><span class="md">27.12.2027</span><span class="mz">☽ w Strzelcu</span></div></div>
+<p class="note">Karty z ilustracjami i opisami dojdą do każdego zjawiska.</p>
 </div></section>
 
 <section id="pakiety" class="band"><div class="in"><p class="eyebrow">Pakiety i produkty</p><h2>Pakiety i produkty</h2>
@@ -267,8 +303,8 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 <article class="pc"><div class="gal"><div class="track"><div class="slide"><div class="ph">zdjęcie w scenerii</div></div><div class="slide"><img src="img/kal-4.webp" alt="Spirala, ciemna" loading="lazy"></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab">L°4</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">kalendarz roczny</span><h3>Spirala · ciemna</h3></div></article>
 <article class="pc"><div class="gal"><div class="track"><div class="slide"><div class="ph">zdjęcie w scenerii</div></div><div class="slide"><img src="img/kal-5.webp" alt="Miesiące w kręgach, jasny" loading="lazy"></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab">L°5</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">kalendarz roczny</span><h3>Miesiące w kręgach · jasny</h3></div></article>
 <article class="pc"><div class="gal"><div class="track"><div class="slide"><div class="ph">zdjęcie w scenerii</div></div><div class="slide"><img src="img/kal-6.webp" alt="Miesiące w kręgach, ciemny" loading="lazy"></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab">L°6</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">kalendarz roczny</span><h3>Miesiące w kręgach · ciemny</h3></div></article>
-<article class="pc"><div class="gal"><div class="track"><div class="slide"><div class="ph">zdjęcie w scenerii</div></div><div class="slide"><img src="img/kal-7.webp" alt="Poziomy, jasny" loading="lazy"></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab">L°7</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">kalendarz roczny</span><h3>Poziomy · jasny</h3></div></article>
-<article class="pc"><div class="gal"><div class="track"><div class="slide"><div class="ph">zdjęcie w scenerii</div></div><div class="slide"><img src="img/kal-8.webp" alt="Poziomy, ciemny" loading="lazy"></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab">L°8</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">kalendarz roczny</span><h3>Poziomy · ciemny</h3></div></article>
+<article class="pc"><div class="gal"><div class="track"><div class="slide"><div class="ph">zdjęcie w scenerii</div></div><div class="slide fit"><img src="img/kal-7.webp" alt="Poziomy, jasny" loading="lazy"></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab">L°7</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">kalendarz roczny</span><h3>Poziomy · jasny</h3></div></article>
+<article class="pc"><div class="gal"><div class="track"><div class="slide"><div class="ph">zdjęcie w scenerii</div></div><div class="slide fit"><img src="img/kal-8.webp" alt="Poziomy, ciemny" loading="lazy"></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab">L°8</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">kalendarz roczny</span><h3>Poziomy · ciemny</h3></div></article>
 <article class="pc"><div class="gal"><div class="track"><div class="slide"><div class="ph">zdjęcie w scenerii</div></div><div class="slide fit"><img src="img/biurko-trojkaty.webp" alt="Biurkowy do złożenia" loading="lazy"></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab">B°1</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">kalendarz biurkowy</span><h3>Biurkowy do złożenia</h3></div></article>
 <article class="pc"><div class="gal"><div class="track"><div class="slide"><img src="img/scena-biurkowy-spiralka.webp" alt="Ciemny kalendarz biurkowy na biurku" loading="lazy"></div><div class="slide fit"><img src="img/biurko-spiralka.webp" alt="Biurkowy na spiralce" loading="lazy"></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab">B°2</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">kalendarz biurkowy</span><h3>Biurkowy na spiralce · ciemny</h3></div></article>
 <article class="pc"><div class="gal"><div class="track"><div class="slide"><div class="ph">zdjęcie w scenerii</div></div><div class="slide"><div class="ph">widok kalendarza</div></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab">W°1</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">wkrótce</span><h3>Ścienny miesięczny</h3></div></article>
@@ -282,7 +318,7 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 
 <section id="lista"><div class="in" style="text-align:center">
 <p class="eyebrow">Lista oczekujących</p><h2>Ten rok przejdziemy razem</h2>
-<p class="lede" style="margin-inline:auto;max-width:60ch">Zamawiając egzemplarz, dołączasz do zamkniętej społeczności pokrewnych Dusz, z którymi przejdziesz ten rok w rytmie Księżyca.</p>
+<p class="lede" style="margin-inline:auto;max-width:60ch">Zamawiając egzemplarz, dołączasz do zamkniętej społeczności<br>pokrewnych Dusz, z którymi przejdziesz ten rok w rytmie Księżyca.</p>
 <p class="lede" style="margin-inline:auto;max-width:60ch;margin-top:12px">Premiera w nowiu 9 listopada 2026,<br>w pierwszej kolejności dla subskrybentów.</p>
 <div class="cta" style="margin-top:32px"><a class="btn olive" href="https://www.reualchemy.com/s/resonance-2027" target="_blank" rel="noopener">☾ zapisuję się na re:Sonance ♫ 2027</a></div>
 <p class="fine">Zapisujesz się na listę oczekujących na kalendarz. W mailu powitalnym znajdziesz wszystko, co potrzebne.</p>
@@ -332,7 +368,17 @@ a.addEventListener('ended',reset);})();
 </script>
 <footer><div class="in"><span>re:U Alchemy Studio</span><span>Regulamin · Kontakt · Instagram · Substack</span></div></footer>
 <script>
-document.querySelectorAll('.gal').forEach(function(g){var t=g.querySelector('.track'),d=g.querySelectorAll('.dots i');function u(){var k=Math.round(t.scrollLeft/t.clientWidth);d.forEach(function(x,i){x.className=i===k?'on':''})}t.addEventListener('scroll',u,{passive:true});u()});
+document.querySelectorAll('.gal').forEach(function(g){var t=g.querySelector('.track'),d=g.querySelectorAll('.dots i');
+function k(){return Math.round(t.scrollLeft/t.clientWidth)}
+function u(){var n=k();d.forEach(function(x,i){x.className=i===n?'on':''})}
+function go(n){n=Math.max(0,Math.min(d.length-1,n));t.scrollTo({left:n*t.clientWidth,behavior:'smooth'})}
+['l','r'].forEach(function(c){var b=document.createElement('button');b.type='button';b.className='arr '+c;b.setAttribute('aria-label',c==='l'?'Poprzednie zdjęcie':'Następne zdjęcie');b.textContent=c==='l'?'‹':'›';b.addEventListener('click',function(){go(k()+(c==='l'?-1:1))});g.appendChild(b)});
+d.forEach(function(x,i){x.style.cursor='pointer';x.addEventListener('click',function(){go(i)})});
+var sx=null,sl=0;t.addEventListener('mousedown',function(e){sx=e.pageX;sl=t.scrollLeft;t.style.scrollSnapType='none'});
+window.addEventListener('mousemove',function(e){if(sx!==null)t.scrollLeft=sl-(e.pageX-sx)});
+window.addEventListener('mouseup',function(){if(sx!==null){sx=null;t.style.scrollSnapType='';go(k())}});
+t.addEventListener('dragstart',function(e){e.preventDefault()});
+t.addEventListener('scroll',u,{passive:true});u()});
 </script>
 </body>
 </html>
