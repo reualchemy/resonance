@@ -79,8 +79,9 @@ nav a{color:var(--muted);text-decoration:none}
 .hero{text-align:center}
 .hero h1{font-size:clamp(56px,12vw,140px);letter-spacing:-.01em}
 .hero h1 em{color:var(--accent)}
-.hero h1{font-size:clamp(30px,5.6vw,76px);line-height:1.45;letter-spacing:0;color:var(--fg)}
-.hero h1 sup.tm,.hero h1 .yr{color:#AE8628}
+.hero h1{font-size:clamp(16px,4.6vw,58px);line-height:1.5;letter-spacing:0;color:var(--fg)}
+.hero h1 sup.tm{color:#AE8628}
+.hero h1 .zf.yr{color:var(--fg)}
 .hero .lead{max-width:60ch;margin:24px auto 0;color:var(--muted);font-size:18px}
 .shelf{display:flex;justify-content:center;align-items:flex-end;gap:clamp(8px,2vw,24px);margin:56px 0 40px;flex-wrap:wrap}
 .shelf{align-items:center;gap:clamp(8px,2.5vw,36px);flex-wrap:nowrap}
@@ -232,10 +233,11 @@ img.zap{height:1.15em;width:auto;vertical-align:-0.28em;display:inline-block}
 .sheet h3{font-size:24px}
 .sheet p{font-size:14px;color:var(--muted)}
 .tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
-.zf{font-family:"zapfino-extra-lt-pro","Snell Roundhand","Apple Chancery",cursive;font-weight:400;font-size:1.3em;line-height:1;letter-spacing:0;color:#AE8628}
-.zn{font-family:"zapfino-extra-lt-pro","Snell Roundhand","Apple Chancery",cursive;font-weight:400;font-size:.85em;line-height:1.6;letter-spacing:0}
+.zf{font-family:"zapfino-extra-lt-pro","Snell Roundhand","Apple Chancery",cursive;font-weight:400;font-size:2.6em;line-height:1;letter-spacing:0;color:#AE8628}
+.zn{font-family:"zapfino-extra-lt-pro","Snell Roundhand","Apple Chancery",cursive;font-weight:400;font-size:1.7em;line-height:1.3;letter-spacing:0}
 sup.tm{font-size:.38em;line-height:0;vertical-align:super;font-family:var(--serif)}
-#dzwiek h2{line-height:1.5}
+@media(max-width:760px){.zf{font-size:2em}.zn{font-size:1.4em}}
+#dzwiek h2{line-height:1.3}
 #dzwiek .tonlink{margin-top:16px}
 #dzwiek .tonlink a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 .glosy{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-top:36px}
@@ -432,7 +434,7 @@ s.forEach(function(e){o.observe(e)});setTimeout(all,6000);})();
 a.addEventListener('click',function(e){e.preventDefault();d.open=true;var s=document.getElementById('pytania');if(s){var i=s.querySelector('.in');if(i)i.classList.add('vis')}
 d.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'center'})});})();
 </script>
-<footer><div class="in"><span>re:U Alchemy Studio · re:Sonance™ · Alchemia Dwóch Tonów™</span><span>Regulamin · Kontakt · Instagram · Substack</span></div></footer>
+<footer><div class="in"><span>© 2026 re:U Alchemy Studio · re:Sonance™ · Alchemia Dwóch Tonów™ · Wszelkie prawa zastrzeżone</span><span>Regulamin · Kontakt · Instagram · Substack</span></div></footer>
 <script>
 document.querySelectorAll('.gal').forEach(function(g){var t=g.querySelector('.track'),d=g.querySelectorAll('.dots i');
 function k(){return Math.round(t.scrollLeft/t.clientWidth)}
