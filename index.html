@@ -114,6 +114,19 @@ nav a{color:var(--muted);text-decoration:none}
 .pack h3{font-size:24px;margin:8px 0}
 .flip{margin-top:40px}
 .flip .ph{aspect-ratio:16/9}
+#flipbook{margin:0 auto}
+#flipbook .page{background:#fbf6ef;overflow:hidden}
+#flipbook .page img{display:block;width:100%;height:100%;object-fit:cover}
+.flip-nav{display:flex;justify-content:center;align-items:center;gap:18px;margin-top:20px}
+.flip-nav .btn{min-width:48px;padding:8px 16px;font-size:20px;line-height:1}
+#flip-count{font-size:13px;letter-spacing:.12em;min-width:70px;text-align:center}
+.flip-hint{text-align:center;font-size:12px;letter-spacing:.06em;opacity:.7;margin:8px 0 0}
+.stf__parent{position:relative;display:block;box-sizing:border-box;transform:translateZ(0);touch-action:pan-y}
+.stf__wrapper{position:relative;width:100%;box-sizing:border-box}
+.stf__parent canvas{position:absolute;width:100%;height:100%;left:0;top:0}
+.stf__block{position:absolute;width:100%;height:100%;box-sizing:border-box;perspective:2000px}
+.stf__item{display:none;position:absolute;transform-style:preserve-3d}
+.stf__outerShadow,.stf__innerShadow,.stf__hardShadow,.stf__hardInnerShadow{position:absolute;left:0;top:0}
 @media(max-width:760px){.trio,.help,.pack{grid-template-columns:1fr}.trio .ph{aspect-ratio:4/3}}
 footer{background:var(--band);color:var(--band-fg);margin-top:0}
 .mc{position:relative;overflow:hidden;aspect-ratio:1;cursor:pointer;min-height:0;justify-content:center}
@@ -309,7 +322,7 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 <section id="srodek" class="ruled"><div class="in">
 <p class="eyebrow">Zajrzyj do środka</p><h2><span class="zf">re:Sonance</span><sup class="tm">™</sup> od środka</h2>
 <p class="lede">Przekartkuj kalendarz: tygodnie, nowie, pełnie i strony z tonami.</p>
-<div class="flip"><div class="ph mock">flipbook: przekartkuj kalendarz</div></div>
+<div class="flip" id="flipwrap"><div id="flipbook"><div class="page" data-density="hard"><img data-src="img/flip/str01.webp" alt="Okładka kalendarza re:Sonance 2027" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str02.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (2 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str03.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (3 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str04.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (4 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str05.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (5 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str06.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (6 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str07.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (7 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str08.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (8 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str09.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (9 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str10.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (10 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str11.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (11 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str12.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (12 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str13.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (13 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str14.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (14 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str15.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (15 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str16.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (16 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str17.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (17 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str18.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (18 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str19.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (19 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str20.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (20 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str21.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (21 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str22.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (22 z 24)" width="1000" height="1414"></div><div class="page"><img data-src="img/flip/str23.webp" alt="Przykładowa strona kalendarza re:Sonance 2027 (23 z 24)" width="1000" height="1414"></div><div class="page" data-density="hard"><img data-src="img/flip/str24.webp" alt="Tył okładki re:Sonance 2027" width="1000" height="1414"></div></div><div class="flip-nav"><button type="button" class="btn" id="flip-prev" aria-label="Poprzednia strona">‹</button><span id="flip-count" aria-live="polite">1 / 24</span><button type="button" class="btn" id="flip-next" aria-label="Następna strona">›</button></div><p class="flip-hint">Przeciągnij róg strony albo użyj strzałek.</p></div>
 </div></section>
 
 <section id="dzwiek" class="ruled"><div class="in two">
@@ -450,6 +463,36 @@ t.addEventListener('scroll',u,{passive:true});u()});
 </script>
 <script>
 document.querySelectorAll('.mc').forEach(function(m){function t(){m.classList.toggle('on')}m.addEventListener('click',t);m.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}})});
+</script>
+<script src="js/page-flip.browser.js"></script>
+<script>
+(function(){
+  var wrap=document.getElementById('flipwrap'), el=document.getElementById('flipbook');
+  if(!wrap||!el||!window.St) return;
+  var started=false, pf=null, N=24;
+  function start(){
+    if(started) return; started=true;
+    el.querySelectorAll('img[data-src]').forEach(function(im){im.src=im.getAttribute('data-src');});
+    pf=new St.PageFlip(el,{width:500,height:707,size:'stretch',minWidth:240,maxWidth:520,minHeight:339,maxHeight:735,
+      showCover:true,usePortrait:true,mobileScrollSupport:true,maxShadowOpacity:0.35,flippingTime:850});
+    pf.loadFromHTML(el.querySelectorAll('.page'));
+    var cnt=document.getElementById('flip-count');
+    function upd(){var i=pf.getCurrentPageIndex(); var o=pf.getOrientation&&pf.getOrientation();
+      var txt=(i+1)+' / '+N;
+      if(o==='landscape' && i>0 && i<N-1){var a=(i%2===1)?i:i-1; txt=(a+1)+'–'+(a+2)+' / '+N;}
+      cnt.textContent=txt;}
+    pf.on('flip',upd); pf.on('changeOrientation',upd); upd();
+    document.getElementById('flip-prev').onclick=function(){pf.flipPrev();};
+    document.getElementById('flip-next').onclick=function(){pf.flipNext();};
+    document.addEventListener('keydown',function(e){
+      var r=wrap.getBoundingClientRect(); if(r.bottom<0||r.top>innerHeight) return;
+      if(e.key==='ArrowLeft') pf.flipPrev(); if(e.key==='ArrowRight') pf.flipNext();});
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){if(es.some(function(x){return x.isIntersecting;})){io.disconnect();start();}},{rootMargin:'600px'});
+    io.observe(wrap);
+  } else start();
+})();
 </script>
 </body>
 </html>
