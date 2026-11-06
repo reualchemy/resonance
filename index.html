@@ -30,7 +30,7 @@ footer{--st:#C9A18A}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 <style>
-html.js section:not(.hero)>.in>*{opacity:0;transform:translateY(34px);transition:opacity 1.1s cubic-bezier(.22,.61,.36,1) var(--d,0s),transform 1.1s cubic-bezier(.22,.61,.36,1) var(--d,0s)}
+html.js section:not(.hero)>.in>*{opacity:0;transform:translateY(64px) scale(.975);transition:opacity 1.3s cubic-bezier(.16,.8,.3,1) var(--d,0s),transform 1.3s cubic-bezier(.16,.8,.3,1) var(--d,0s)}
 html.js section:not(.hero)>.in>*.vis,html.js section:not(.hero)>.in.vis>*{opacity:1;transform:none}
 html.js .hero>.in>*{animation:hf 1.2s cubic-bezier(.22,.61,.36,1) both}
 html.js .hero>.in>:nth-child(2){animation-delay:.12s}html.js .hero>.in>:nth-child(3){animation-delay:.24s}html.js .hero>.in>:nth-child(4){animation-delay:.38s}html.js .hero>.in>:nth-child(5){animation-delay:.52s}html.js .hero>.in>:nth-child(6){animation-delay:.64s}html.js .hero>.in>:nth-child(7){animation-delay:.76s}
@@ -467,8 +467,8 @@ function all(){s.forEach(function(e){e.classList.add('vis')})}
 if(rm||!('IntersectionObserver' in window)){all()}else{
 var o=new IntersectionObserver(function(r){var n=0;r.forEach(function(x){if(x.isIntersecting){x.target.style.setProperty('--d',Math.min(n,4)*0.1+'s');n++;x.target.classList.add('vis');o.unobserve(x.target)}})},{threshold:0.1,rootMargin:'0px 0px -6% 0px'});
 s.forEach(function(e){o.observe(e)});setTimeout(all,8000);
-var hi=document.querySelector('.hero>.in'),hs=document.querySelector('.hero'),t=false;
-if(hi&&hs){window.addEventListener('scroll',function(){if(t)return;t=true;requestAnimationFrame(function(){t=false;var p=Math.max(0,Math.min(1,window.scrollY/(hs.offsetHeight*0.85)));hi.style.opacity=(1-0.75*p).toFixed(3);hi.style.transform='translateY('+(p*36).toFixed(1)+'px)'})},{passive:true})}}
+var th=document.querySelectorAll('.hero .shelf>*'),hi=document.querySelector('.hero>.in'),hs=document.querySelector('.hero'),t=false;
+if(hi&&hs){window.addEventListener('scroll',function(){if(t)return;t=true;requestAnimationFrame(function(){t=false;var p=Math.max(0,Math.min(1,window.scrollY/(hs.offsetHeight*0.85)));hi.style.opacity=(1-0.85*p).toFixed(3);hi.style.transform='translateY('+(p*90).toFixed(1)+'px) scale('+(1-0.05*p).toFixed(3)+')';if(th.length===3){th[0].style.translate='0 '+(p*-40).toFixed(1)+'px';th[0].style.rotate=(p*-5).toFixed(2)+'deg';th[1].style.translate='0 '+(p*40).toFixed(1)+'px';th[2].style.translate='0 '+(p*-40).toFixed(1)+'px';th[2].style.rotate=(p*5).toFixed(2)+'deg'}})},{passive:true})}}
 })();
 </script>
 <script>
