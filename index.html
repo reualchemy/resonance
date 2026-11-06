@@ -323,7 +323,7 @@ h3 .zf{font-size:1.9em;line-height:.6}
 .opform h3{font-weight:400;font-size:clamp(24px,3vw,30px);margin:0 0 8px;text-align:center}
 .opform .sub{text-align:center;color:var(--muted);margin:0 0 22px;font-size:15px;line-height:1.6}
 .opform label{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:16px 0 6px}
-.opform input[type=text],.opform textarea{width:100%;box-sizing:border-box;background:#FBF6EF;border:1px solid var(--line);border-radius:4px;padding:12px 14px;font:inherit;font-size:16px;color:var(--fg)}
+.opform input[type=text],.opform input[type=email],.opform textarea{width:100%;box-sizing:border-box;background:#FBF6EF;border:1px solid var(--line);border-radius:4px;padding:12px 14px;font:inherit;font-size:16px;color:var(--fg)}
 .opform textarea{min-height:130px;resize:vertical;line-height:1.55}
 .opform input:focus-visible,.opform textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .opform .zg{display:flex;gap:10px;align-items:flex-start;margin:18px 0 0;font-size:14px;line-height:1.5;text-transform:none;letter-spacing:0;color:var(--fg)}
@@ -477,10 +477,13 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 <form id="opf" action="https://formspree.io/f/xljjkdjg" method="POST" novalidate>
 <label for="op-im">Imię lub inicjały</label>
 <input type="text" id="op-im" name="imie" maxlength="60" autocomplete="given-name">
+<label for="op-em">Twój e-mail (nie będzie publikowany)</label>
+<input type="email" id="op-em" name="email" maxlength="120" autocomplete="email" required>
 <label for="op-tx">Twoja opinia</label>
 <textarea id="op-tx" name="opinia" maxlength="1200" required></textarea>
 <label class="zg"><input type="checkbox" name="zgoda" value="tak" required><span>Zgadzam się na publikację mojej opinii (z imieniem lub inicjałami) na stronie re:Sonance™.</span></label>
 <div class="hp" aria-hidden="true"><label>Nie wypełniaj <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+<div class="cf-turnstile" data-sitekey="0x4AAAAAAF2we_DM_YnnuXnn" data-language="pl" style="margin-top:18px"></div>
 <button class="btn olive" type="submit">Wyślij opinię</button>
 <p class="err" id="op-err" role="alert">Coś poszło nie tak. Spróbuj jeszcze raz albo napisz do mnie na Instagramie.</p>
 </form>
@@ -639,10 +642,11 @@ document.querySelectorAll('.mc').forEach(function(m){function t(){m.classList.to
 if(f.action.indexOf('WSTAW_ID')>-1)return;w.hidden=false;
 var ok=document.getElementById('op-ok'),er=document.getElementById('op-err');
 f.addEventListener('submit',function(e){e.preventDefault();er.style.display='none';
-if(!f.opinia.value.trim()||!f.zgoda.checked){er.textContent='Wpisz opinię i zaznacz zgodę na publikację.';er.style.display='block';return}
+if(!f.opinia.value.trim()||!f.zgoda.checked||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email.value.trim())){er.textContent='Wpisz opinię i poprawny e-mail oraz zaznacz zgodę na publikację.';er.style.display='block';return}
+if(!f.elements['cf-turnstile-response']||!f.elements['cf-turnstile-response'].value){er.textContent='Poczekaj chwilę na weryfikację „nie jestem robotem” i spróbuj jeszcze raz.';er.style.display='block';return}
 var b=f.querySelector('button');b.disabled=true;
 fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}}).then(function(r){
-if(r.ok){f.style.display='none';ok.style.display='block'}else{throw 0}}).catch(function(){b.disabled=false;er.textContent='Coś poszło nie tak. Spróbuj jeszcze raz albo napisz do mnie na Instagramie.';er.style.display='block'})})})();
+if(r.ok){f.style.display='none';ok.style.display='block'}else{throw 0}}).catch(function(){b.disabled=false;try{turnstile.reset()}catch(_){}er.textContent='Coś poszło nie tak. Spróbuj jeszcze raz albo napisz do mnie na Instagramie.';er.style.display='block'})})})();
 </script>
 <nav class="jmp" aria-label="Szybka nawigacja"><button type="button" id="jup" aria-label="Na górę"><svg viewBox="0 0 16 16"><path d="M3 10l5-5 5 5"/></svg></button><i></i><button type="button" id="jdn" aria-label="Na dół"><svg viewBox="0 0 16 16"><path d="M3 6l5 5 5-5"/></svg></button></nav>
 <script>(function(){var u=document.getElementById('jup'),d=document.getElementById('jdn'),rm=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
@@ -660,6 +664,7 @@ addEventListener('scroll',t,{passive:true});addEventListener('resize',t);t()})()
 <label for="kt-em">Twój e-mail</label><input type="email" id="kt-em" name="email" maxlength="120" autocomplete="email" required>
 <label for="kt-tx">Wiadomość</label><textarea id="kt-tx" name="wiadomosc" maxlength="2000" required></textarea>
 <div class="hp" aria-hidden="true"><label>Nie wypełniaj <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+<div class="cf-turnstile" data-sitekey="0x4AAAAAAF2wuVOTbFzqDqUF" data-language="pl" style="margin-top:18px"></div>
 <button class="btn olive" type="submit">Wyślij wiadomość</button>
 <p class="err" id="kt-err" role="alert"></p>
 </form>
@@ -674,8 +679,10 @@ m.addEventListener('click',function(e){if(e.target===m)cl()});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('on'))cl()});
 f.addEventListener('submit',function(e){e.preventDefault();er.style.display='none';
 if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email.value.trim())||!f.wiadomosc.value.trim()){er.textContent='Wpisz poprawny e-mail i wiadomość.';er.style.display='block';return}
+if(!f.elements['cf-turnstile-response']||!f.elements['cf-turnstile-response'].value){er.textContent='Poczekaj chwilę na weryfikację „nie jestem robotem” i spróbuj jeszcze raz.';er.style.display='block';return}
 var b=f.querySelector('button[type=submit]');b.disabled=true;
 fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}}).then(function(r){
-if(r.ok){f.style.display='none';ok.style.display='block'}else{throw 0}}).catch(function(){b.disabled=false;er.textContent='Coś poszło nie tak. Spróbuj jeszcze raz albo napisz do mnie na Instagramie.';er.style.display='block'})})})();</script>
+if(r.ok){f.style.display='none';ok.style.display='block'}else{throw 0}}).catch(function(){b.disabled=false;try{turnstile.reset()}catch(_){}er.textContent='Coś poszło nie tak. Spróbuj jeszcze raz albo napisz do mnie na Instagramie.';er.style.display='block'})})})();</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 </html>
