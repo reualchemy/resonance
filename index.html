@@ -549,7 +549,9 @@ document.querySelectorAll('.mc').forEach(function(m){function t(){m.classList.to
   }
   function start(){
     if(started) return; started=true;
-    el.querySelectorAll('img[data-src]').forEach(function(im){im.src=im.getAttribute('data-src');});
+    var ims=el.querySelectorAll('img[data-src]');
+    ims.forEach(function(im,ix){if(ix<10){im.src=im.getAttribute('data-src');}});
+    (function rest(ix){if(ix>=ims.length)return;var im=ims[ix];if(!im.src)im.src=im.getAttribute('data-src');setTimeout(function(){rest(ix+1)},ix<16?120:350)})(10);
     pf=new St.PageFlip(el,{width:500,height:707,size:'stretch',minWidth:240,maxWidth:520,minHeight:339,maxHeight:735,
       showCover:true,usePortrait:true,mobileScrollSupport:true,maxShadowOpacity:0.35,flippingTime:850});
     pf.loadFromHTML(el.querySelectorAll('.page'));
@@ -565,8 +567,9 @@ document.querySelectorAll('.mc').forEach(function(m){function t(){m.classList.to
       if(e.key==='ArrowLeft') go(-1); if(e.key==='ArrowRight') go(1);});
   }
   fill(0);
+  (function(){function warm(){for(var n=1;n<=8;n++){var im=new Image();im.decoding='async';im.src='img/flip/str0'+n+'.webp';}}if(window.requestIdleCallback)requestIdleCallback(warm,{timeout:2500});else setTimeout(warm,1500);})();
   if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){if(es.some(function(x){return x.isIntersecting;})){io.disconnect();start();}},{rootMargin:'600px'});
+    var io=new IntersectionObserver(function(es){if(es.some(function(x){return x.isIntersecting;})){io.disconnect();start();}},{rootMargin:'2500px'});
     io.observe(wrap);
   } else start();
 })();
