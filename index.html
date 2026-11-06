@@ -40,6 +40,13 @@ html.js .hero>.in>:nth-child(2){animation-delay:.12s}html.js .hero>.in>:nth-chil
 html.js .hero>.in{will-change:opacity,transform}
 @keyframes hf{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){html.js section:not(.hero)>.in>*,html.js section:not(.hero)>.in .rv{opacity:1;transform:none;transition:none}html.js .hero>.in>*{animation:none}}
+.jmp{position:fixed;right:14px;top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;align-items:center;gap:10px}
+.jmp button{background:none;border:0;padding:6px;cursor:pointer;opacity:.4;transition:opacity .3s}
+.jmp button:hover,.jmp button:focus-visible{opacity:1}
+.jmp svg{display:block;width:16px;height:16px;fill:none;stroke:#AE8628;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round}
+.jmp i{display:block;width:1px;height:34px;background:linear-gradient(#AE8628,transparent);opacity:.35}
+.jmp button[hidden]{display:block;visibility:hidden}
+@media(max-width:700px){.jmp{right:2px}.jmp svg{width:14px;height:14px}}
 </style>
 </head>
 <body>
@@ -303,7 +310,8 @@ h3 .zf{font-size:1.9em;line-height:.6}
 .opform .zg input{margin-top:3px;flex:none}
 .opform .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .opform button{margin-top:22px;border:0;cursor:pointer;font-family:inherit;width:100%}
-.opform .sub .zf{font-size:1.05em;line-height:1}
+.opform .sub .zf{font-size:1.9em;line-height:1;vertical-align:-.12em}
+.opform .sub .love{display:block;margin-top:6px;font-style:italic;color:var(--accent)}
 .opform .ok{display:none;text-align:center;padding:22px;background:#EEE6D8;border-radius:4px;margin-top:18px}
 .opform .err{display:none;color:#8a3b2e;font-size:14px;margin-top:12px;text-align:center}
 .lb{position:fixed;inset:0;z-index:100;background:rgba(40,36,30,.88);display:flex;align-items:center;justify-content:center;padding:16px;cursor:zoom-out}
@@ -444,8 +452,8 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 <p class="hint">Kliknij, aby powiększyć</p>
 </div>
 <div class="opform" id="opform" hidden>
-<h3>Zostaw swoją opinię</h3>
-<p class="sub">Znasz już <span class="zf">re:Sonance</span>™ albo ją przejrzałaś lub przejrzałeś? Napisz kilka słów. Najciekawsze opinie pokażę tutaj, zawsze za Twoją zgodą.</p>
+<h3>Podziel się swoją opinią</h3>
+<p class="sub">Znasz już <span class="zf">re:Sonance</span><sup class="tm">™</sup> 2027 albo inne nasze produkty? Podziel się swoimi doświadczeniami z innymi.<span class="love">Sharing is caring ♡</span></p>
 <form id="opf" action="https://formspree.io/f/xljjkdjg" method="POST" novalidate>
 <label for="op-im">Imię lub inicjały</label>
 <input type="text" id="op-im" name="imie" maxlength="60" autocomplete="given-name">
@@ -453,7 +461,7 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 <textarea id="op-tx" name="opinia" maxlength="1200" required></textarea>
 <label class="zg"><input type="checkbox" name="zgoda" value="tak" required><span>Zgadzam się na publikację mojej opinii (z imieniem lub inicjałami) na stronie re:Sonance™.</span></label>
 <div class="hp" aria-hidden="true"><label>Nie wypełniaj <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
-<button class="btn" type="submit">Wyślij opinię</button>
+<button class="btn olive" type="submit">Wyślij opinię</button>
 <p class="err" id="op-err" role="alert">Coś poszło nie tak. Spróbuj jeszcze raz albo napisz do mnie na Instagramie.</p>
 </form>
 <div class="ok" id="op-ok" role="status">Dziękuję. Twoja opinia do mnie dotarła. ☽</div>
@@ -616,5 +624,11 @@ var b=f.querySelector('button');b.disabled=true;
 fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}}).then(function(r){
 if(r.ok){f.style.display='none';ok.style.display='block'}else{throw 0}}).catch(function(){b.disabled=false;er.textContent='Coś poszło nie tak. Spróbuj jeszcze raz albo napisz do mnie na Instagramie.';er.style.display='block'})})})();
 </script>
+<nav class="jmp" aria-label="Szybka nawigacja"><button type="button" id="jup" aria-label="Na górę"><svg viewBox="0 0 16 16"><path d="M3 10l5-5 5 5"/></svg></button><i></i><button type="button" id="jdn" aria-label="Na dół"><svg viewBox="0 0 16 16"><path d="M3 6l5 5 5-5"/></svg></button></nav>
+<script>(function(){var u=document.getElementById('jup'),d=document.getElementById('jdn'),rm=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+function go(y){window.scrollTo({top:y,behavior:rm?'auto':'smooth'})}
+u.onclick=function(){go(0)};d.onclick=function(){go(document.documentElement.scrollHeight)};
+function t(){var y=window.scrollY,m=document.documentElement.scrollHeight-innerHeight;u.hidden=y<300;d.hidden=y>m-300}
+addEventListener('scroll',t,{passive:true});addEventListener('resize',t);t()})();</script>
 </body>
 </html>
