@@ -87,6 +87,21 @@ header .in{display:flex;justify-content:space-between;align-items:center;padding
 .logo span{font-family:"circe","Cormorant Garamond",var(--serif);font-weight:300;font-style:italic;font-size:20px;letter-spacing:.02em;white-space:nowrap;-webkit-font-smoothing:antialiased}
 nav{display:flex;gap:16px;font-size:12px;letter-spacing:.07em;white-space:nowrap;text-transform:uppercase;flex-wrap:wrap}
 nav a{color:var(--muted);text-decoration:none}
+.kt{position:fixed;inset:0;z-index:90;background:rgba(74,69,59,.45);display:none;align-items:center;justify-content:center;padding:16px}
+.kt.on{display:flex}
+.kt-box{position:relative;background:var(--bg);border-radius:6px;max-width:520px;width:100%;max-height:92vh;overflow:auto;padding:32px 28px 28px;box-sizing:border-box}
+.kt-x{position:absolute;right:10px;top:8px;background:none;border:0;font-size:28px;line-height:1;color:var(--muted);cursor:pointer;padding:6px 10px}
+.kt h3{font-weight:400;font-size:28px;margin:0 0 6px;text-align:center}
+.kt .sub{text-align:center;color:var(--muted);margin:0 0 10px;font-size:15px}
+.kt label{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:16px 0 6px}
+.kt input[type=text],.kt input[type=email],.kt textarea{width:100%;box-sizing:border-box;background:#FBF6EF;border:1px solid var(--line);border-radius:4px;padding:12px 14px;font:inherit;font-size:16px;color:var(--fg)}
+.kt textarea{min-height:130px;resize:vertical;line-height:1.55}
+.kt input:focus-visible,.kt textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.kt .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.kt button.btn{margin-top:22px;border:0;cursor:pointer;font-family:inherit;width:100%}
+.kt .ok{display:none;text-align:center;padding:22px;background:#EEE6D8;border-radius:4px;margin-top:18px}
+.kt .err{display:none;color:#8a3b2e;font-size:14px;margin-top:12px;text-align:center}
+footer a{color:inherit;text-decoration:none;border-bottom:1px solid transparent}footer a:hover{border-bottom-color:currentColor}
 .burger{display:none;background:none;border:1px solid var(--line);border-radius:8px;width:44px;height:44px;padding:0;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;flex-shrink:0}
 .burger i{display:block;width:20px;height:1.5px;background:var(--muted)}
 @media(max-width:760px){header .in{padding-block:12px}.burger{display:flex}.logo span{font-size:17px}header.open nav{display:flex;position:absolute;left:0;right:0;top:100%;z-index:50;flex-direction:column;gap:0;padding:8px 24px 16px;background:var(--bg);border-bottom:1px solid var(--line);font-size:14px;letter-spacing:.1em}header.open nav a{padding:12px 0;border-bottom:1px solid var(--line)}header.open nav a:last-child{border-bottom:0}}
@@ -458,7 +473,7 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 </div>
 <div class="opform" id="opform" hidden>
 <h3>Podziel się swoją opinią</h3>
-<p class="sub">Znasz już <span class="zf">re:Sonance</span><sup class="tm">™</sup> <span class="zf">2027</span> albo inne nasze produkty?<br>Podziel się swoimi doświadczeniami z innymi.<span class="love">Sharing is caring ♡</span></p>
+<p class="sub">Znasz już <span class="zf">re:Sonance</span><sup class="tm">™</sup> <span class="zf">2027</span> albo inne nasze produkty?<br>Podziel się swoimi doświadczeniami i wrażeniami z innymi.<span class="love">Sharing is caring ♡</span></p>
 <form id="opf" action="https://formspree.io/f/xljjkdjg" method="POST" novalidate>
 <label for="op-im">Imię lub inicjały</label>
 <input type="text" id="op-im" name="imie" maxlength="60" autocomplete="given-name">
@@ -538,7 +553,7 @@ if(hi&&hs){window.addEventListener('scroll',function(){if(t)return;t=true;reques
 a.addEventListener('click',function(e){e.preventDefault();d.open=true;var s=document.getElementById('pytania');if(s){var i=s.querySelector('.in');if(i)i.classList.add('vis')}
 d.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'center'})});})();
 </script>
-<footer><div class="in"><span>© 2026 re:U Alchemy Studio · re:Sonance™ · Alchemia Dwóch Tonów™ · Wszelkie prawa zastrzeżone</span><span>Regulamin · Kontakt · Instagram · Substack</span></div></footer>
+<footer><div class="in"><span>© 2026 re:U Alchemy Studio · re:Sonance™ · Alchemia Dwóch Tonów™ · Wszelkie prawa zastrzeżone</span><span>Regulamin · <a href="#kontakt" id="kt-open">Kontakt</a> · <a href="https://www.instagram.com/reu.alchemy/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.reualchemy.com/" target="_blank" rel="noopener">Substack</a></span></div></footer>
 <script>
 document.querySelectorAll('.gal').forEach(function(g){var t=g.querySelector('.track'),d=g.querySelectorAll('.dots i');
 function k(){return Math.round(t.scrollLeft/t.clientWidth)}
@@ -636,5 +651,31 @@ u.onclick=function(){go(0)};d.onclick=function(){go(document.documentElement.scr
 function t(){var y=window.scrollY,m=document.documentElement.scrollHeight-innerHeight;u.hidden=y<300;d.hidden=y>m-300}
 addEventListener('scroll',t,{passive:true});addEventListener('resize',t);t()})();</script>
 <script>(function(){var h=document.querySelector("header"),b=document.getElementById("burger");if(!h||!b)return;function c(){h.classList.remove("open");b.setAttribute("aria-expanded","false")}b.addEventListener("click",function(){var o=h.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false")});h.querySelectorAll("nav a").forEach(function(a){a.addEventListener("click",c)})})();</script>
+<div class="kt" id="kt" role="dialog" aria-modal="true" aria-labelledby="kt-h"><div class="kt-box">
+<button type="button" class="kt-x" id="kt-x" aria-label="Zamknij">×</button>
+<h3 id="kt-h">Napisz do mnie</h3>
+<p class="sub">Pytanie, uwaga albo współpraca? Odpowiem tak szybko, jak to możliwe.</p>
+<form id="ktf" action="https://formspree.io/f/xqppoagz" method="POST" novalidate>
+<label for="kt-im">Imię</label><input type="text" id="kt-im" name="imie" maxlength="60" autocomplete="given-name">
+<label for="kt-em">Twój e-mail</label><input type="email" id="kt-em" name="email" maxlength="120" autocomplete="email" required>
+<label for="kt-tx">Wiadomość</label><textarea id="kt-tx" name="wiadomosc" maxlength="2000" required></textarea>
+<div class="hp" aria-hidden="true"><label>Nie wypełniaj <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+<button class="btn olive" type="submit">Wyślij wiadomość</button>
+<p class="err" id="kt-err" role="alert"></p>
+</form>
+<div class="ok" id="kt-ok" role="status">Dziękuję, wiadomość do mnie dotarła. ☽</div>
+</div></div>
+<script>(function(){var m=document.getElementById('kt'),o=document.getElementById('kt-open'),f=document.getElementById('ktf');if(!m||!o||!f)return;
+var ok=document.getElementById('kt-ok'),er=document.getElementById('kt-err');
+function op(e){e.preventDefault();m.classList.add('on');document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('kt-im').focus()},50)}
+function cl(){m.classList.remove('on');document.body.style.overflow=''}
+o.addEventListener('click',op);document.getElementById('kt-x').addEventListener('click',cl);
+m.addEventListener('click',function(e){if(e.target===m)cl()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('on'))cl()});
+f.addEventListener('submit',function(e){e.preventDefault();er.style.display='none';
+if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email.value.trim())||!f.wiadomosc.value.trim()){er.textContent='Wpisz poprawny e-mail i wiadomość.';er.style.display='block';return}
+var b=f.querySelector('button[type=submit]');b.disabled=true;
+fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}}).then(function(r){
+if(r.ok){f.style.display='none';ok.style.display='block'}else{throw 0}}).catch(function(){b.disabled=false;er.textContent='Coś poszło nie tak. Spróbuj jeszcze raz albo napisz do mnie na Instagramie.';er.style.display='block'})})})();</script>
 </body>
 </html>
