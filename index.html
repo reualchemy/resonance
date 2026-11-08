@@ -572,7 +572,7 @@ document.querySelectorAll('.gal').forEach(function(g){var t=g.querySelector('.tr
 document.querySelectorAll('.pc.tall').forEach(function(p){var g=p.querySelector('.gal'),v=p.querySelector('.spin'),t=g.querySelector('.track');if(!v)return;
 function on(){if(t.scrollLeft>10)return;g.classList.add('playing');v.play().catch(function(){})}
 function off(){g.classList.remove('playing');v.pause();v.currentTime=0}
-if(!touch){p.addEventListener('mouseenter',on);p.addEventListener('mouseleave',off)}
+if(!touch){p.addEventListener('mouseenter',on);p.addEventListener('mousemove',function(){if(!g.classList.contains('playing'))on()});p.addEventListener('mouseleave',off)}
 else{g.addEventListener('click',function(e){if(e.target.closest('.nav,.v3d'))return;if(g.classList.contains('playing'))off();else{t.scrollTo({left:0});on()}})}
 t.addEventListener('scroll',function(){if(t.scrollLeft>10&&g.classList.contains('playing'))off()})});
 var m=document.getElementById('m3d'),f=m.querySelector('iframe');
