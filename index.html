@@ -50,7 +50,7 @@ html.js .hero>.in{will-change:opacity,transform}
 </style>
 </head>
 <body>
-<div id="m3d" role="dialog" aria-label="Podgląd 3D książki"><div class="box"><button type="button" class="x" aria-label="Zamknij">×</button><iframe title="Książka re:Sonance 2027 w 3D" loading="lazy"></iframe></div></div>
+<div id="m3d" role="dialog" aria-label="Podgląd 3D"><div class="box"><button type="button" class="x" aria-label="Zamknij">×</button><iframe title="Model 3D re:Sonance 2027" loading="lazy"></iframe></div></div>
 
 <div class="bgfx" aria-hidden="true"></div>
 <svg class="scrollline" id="sl" aria-hidden="true" viewBox="0 0 200 2000" preserveAspectRatio="xMidYMid meet" fill="none">
@@ -248,16 +248,6 @@ footer{background:var(--band);color:var(--band-fg);margin-top:0}
 .thumb img{display:block;width:100%;height:auto;box-shadow:0 8px 24px rgba(74,69,59,.22)}
 .thumb:hover,.thumb:focus-visible{transform:translateY(-4px);outline:2px solid var(--accent);outline-offset:3px}
 button.btn{border:1px solid var(--fg);font-family:inherit;cursor:pointer}
-.ov{position:fixed;inset:0;z-index:50;background:rgba(251,246,239,.96);overflow:auto;padding:max(24px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 48px max(16px,env(safe-area-inset-left,0px))}
-.ov-in{max-width:1080px;margin:0 auto}
-.ov-top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px}
-.ov-top h2{font-size:clamp(28px,4vw,40px)}
-.ov-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:24px}
-.ov-grid img{display:block;width:100%;height:auto;box-shadow:0 6px 18px rgba(74,69,59,.18)}
-.ov-grid .wide{grid-column:span 2}
-@media(max-width:520px){.ov-grid .wide{grid-column:span 1}}
-.ov-grid figure{margin:0}
-.ov-grid figcaption{font-size:13px;color:var(--muted);margin-top:8px}
 .cover.big{width:clamp(200px,34vw,340px)}
 img.cover{height:auto;display:block;box-shadow:0 18px 40px rgba(74,69,59,.28)}
 .ver img{display:block;width:100%;max-width:240px;height:auto;margin:0 0 24px;box-shadow:0 12px 28px rgba(74,69,59,.25)}
@@ -438,8 +428,8 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 <article class="pc tall"><div class="gal"><div class="track"><div class="slide"><img src="img/elektroniczna-4-okladka.webp" alt="Okładka kalendarza re:Sonance 2027, wersja elektroniczna" width="900" height="1200" loading="lazy"></div><div class="slide"><img src="img/elektroniczna-1-komputer.webp" alt="Kalendarz re:Sonance 2027 w wersji elektronicznej na ekranie komputera" width="900" height="1200" loading="lazy"></div><div class="slide"><img src="img/elektroniczna-3-zblizenie.webp" alt="Zbliżenie na stronę kalendarza elektronicznego na ekranie" width="900" height="1200" loading="lazy"></div><div class="slide"><img src="img/elektroniczna-2-tablet.webp" alt="Kalendarz w wersji elektronicznej na tablecie" width="900" height="1200" loading="lazy"></div></div><span class="lab">E☽1</span><span class="led dig">Wersja elektroniczna</span><span class="dots"><i></i><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">na start</span><h3>Kalendarz · wersja elektroniczna (PDF druk)</h3></div></article>
 <article class="pc tall"><div class="gal"><div class="track"><div class="slide"><img src="img/goodnotes-1-zestaw.webp" alt="Kalendarz re:Sonance 2027 na iPadach i telefonie, wersja do GoodNotes i Notability" width="720" height="960" loading="lazy"></div><div class="slide"><img src="img/goodnotes-2-tablet.webp" alt="Kalendarz re:Sonance 2027 na iPadzie w dłoniach, strona z kartą informacyjną" width="720" height="960" loading="lazy"></div></div><span class="lab">E☽2</span><span class="dots"><i></i><i></i></span></div><div class="pt"><span class="tag">wkrótce</span><h3>Wersja na GoodNotes / Notability</h3></div></article>
 <article class="pc"><div class="gal"><div class="track"><div class="slide"><div class="ph">zdjęcie w scenerii</div></div><div class="slide"><div class="ph">widok w aplikacji</div></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab">E☽3</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">wkrótce</span><h3><span class="zf">re:Sonance</span><sup class="tm">™</sup> w Google Calendar</h3></div></article>
-<article class="pc"><div class="gal"><div class="track"><div class="slide"><div class="ph">zdjęcie w scenerii</div></div><div class="slide fit"><img src="img/biurko-trojkaty-s.webp" alt="Biurkowy do złożenia" loading="lazy"></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab">B☽1</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">kalendarz biurkowy</span><h3>Kalendarz biurkowy do złożenia</h3></div></article>
-<article class="pc"><div class="gal"><div class="track"><div class="slide fit"><img src="img/scena-biurkowy-spiralka-s.webp" alt="Ciemny kalendarz biurkowy na biurku" loading="lazy"></div><div class="slide fit"><img src="img/biurko-spiralka-s.webp" alt="Biurkowy na spiralce" loading="lazy"></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab">B☽2</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">kalendarz biurkowy</span><h3>Kalendarz biurkowy na spiralce · ciemny</h3></div></article>
+<article class="pc w34"><div class="gal"><div class="track"><div class="slide"><img src="img/biurkowy-namiot-1.webp" alt="Kalendarz biurkowy do złożenia na marmurowym blacie" width="900" height="1200" loading="lazy"></div><div class="slide"><img src="img/biurkowy-namiot-2.webp" alt="Kalendarz biurkowy do złożenia, przód i tył" width="900" height="1200" loading="lazy"></div><div class="slide"><img src="img/biurkowy-namiot-3.webp" alt="Kalendarz biurkowy do złożenia, widok z przodu pod kątem" width="900" height="1200" loading="lazy"></div><div class="slide"><img src="img/biurkowy-namiot-4.webp" alt="Kalendarz biurkowy do złożenia, widok z tyłu pod kątem" width="900" height="1200" loading="lazy"></div></div><button type="button" class="v3d" data-open3d="podglad-3d-namiot.html">↻ model 3D</button><span class="lab">B☽1</span><span class="dots"><i></i><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">kalendarz biurkowy</span><h3>Kalendarz biurkowy do złożenia</h3></div></article>
+<article class="pc w34"><div class="gal"><div class="track"><div class="slide"><img src="img/biurkowy-spirala-1.webp" alt="Ciemny kalendarz biurkowy na spiralce na stosie książek" width="900" height="1200" loading="lazy"></div><div class="slide"><img src="img/biurkowy-spirala-2.webp" alt="Kalendarz biurkowy na spiralce, przód i tył" width="900" height="1200" loading="lazy"></div><div class="slide"><img src="img/biurkowy-spirala-3.webp" alt="Kalendarz biurkowy na spiralce, widok z przodu pod kątem" width="900" height="1200" loading="lazy"></div><div class="slide"><img src="img/biurkowy-spirala-4.webp" alt="Kalendarz biurkowy na spiralce, widok z tyłu pod kątem" width="900" height="1200" loading="lazy"></div></div><button type="button" class="v3d" data-open3d="podglad-3d-spirala.html">↻ model 3D</button><span class="lab">B☽2</span><span class="dots"><i></i><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">kalendarz biurkowy</span><h3>Kalendarz biurkowy na spiralce · ciemny</h3></div></article>
 <article class="pc w34"><div class="gal"><div class="track"><div class="slide"><img src="img/sciana-1-scenerie.webp" alt="Kalendarz ścienny re:Sonance 2027, pionowy, jasny, w aranżacji wnętrza" width="900" height="1200" loading="lazy"></div><div class="slide fit"><img src="img/sciana-1-widok.webp" alt="Pionowy, jasny" width="360" height="480" loading="lazy"></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab lg">ES☽1</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">kalendarz roczny</span><h3>Pionowy · jasny</h3></div></article>
 <article class="pc w34"><div class="gal"><div class="track"><div class="slide"><img src="img/sciana-2-scenerie.webp" alt="Kalendarz ścienny re:Sonance 2027, pionowy, ciemny, w aranżacji wnętrza" width="900" height="1200" loading="lazy"></div><div class="slide fit"><img src="img/sciana-2-widok.webp" alt="Pionowy, ciemny" width="360" height="480" loading="lazy"></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab lg">ES☽2</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">kalendarz roczny</span><h3>Pionowy · ciemny</h3></div></article>
 <article class="pc w34"><div class="gal"><div class="track"><div class="slide"><img src="img/sciana-3-scenerie.webp" alt="Kalendarz ścienny re:Sonance 2027, spirala, jasna, w aranżacji wnętrza" width="900" height="1200" loading="lazy"></div><div class="slide fit"><img src="img/sciana-3-widok.webp" alt="Spirala, jasna" width="360" height="480" loading="lazy"></div><div class="slide"><div class="ph">zbliżenie na detal</div></div></div><span class="lab lg">ES☽3</span><span class="dots"><i></i><i></i><i></i></span></div><div class="pt"><span class="tag">kalendarz roczny</span><h3>Spirala · jasna</h3></div></article>
@@ -508,27 +498,6 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 </div>
 </div></section>
 
-<div class="ov" id="ov" role="dialog" aria-modal="true" aria-label="Kalendarze roczne" hidden><div class="ov-in">
-<div class="ov-top"><h2>Kalendarze roczne i biurkowe</h2><button type="button" class="btn" id="ovx">Zamknij</button></div>
-<div class="ov-grid">
-<figure><img src="img/kal-1-xs.webp" alt="Pionowy, jasny" width="640" height="905" loading="lazy"><figcaption>Pionowy, jasny</figcaption></figure>
-<figure><img src="img/kal-2-xs.webp" alt="Pionowy, ciemny" width="640" height="905" loading="lazy"><figcaption>Pionowy, ciemny</figcaption></figure>
-<figure><img src="img/kal-3-xs.webp" alt="Spirala, jasny" width="640" height="905" loading="lazy"><figcaption>Spirala, jasny</figcaption></figure>
-<figure><img src="img/kal-4-xs.webp" alt="Spirala, ciemny" width="640" height="905" loading="lazy"><figcaption>Spirala, ciemny</figcaption></figure>
-<figure><img src="img/kal-5-xs.webp" alt="Miesiące w kręgach, jasny" width="640" height="905" loading="lazy"><figcaption>Miesiące w kręgach, jasny</figcaption></figure>
-<figure><img src="img/kal-6-xs.webp" alt="Miesiące w kręgach, ciemny" width="640" height="905" loading="lazy"><figcaption>Miesiące w kręgach, ciemny</figcaption></figure>
-<figure class="wide"><img src="img/kal-7-xs.webp" alt="Poziomy, jasny" width="1000" height="707" loading="lazy"><figcaption>Poziomy, jasny</figcaption></figure>
-<figure class="wide"><img src="img/kal-8-xs.webp" alt="Poziomy, ciemny" width="1000" height="707" loading="lazy"><figcaption>Poziomy, ciemny</figcaption></figure>
-<figure class="wide"><img src="img/biurko-trojkaty-s.webp" alt="Kalendarz biurkowy do samodzielnego złożenia: trójkąt z miesiącem i trójkąt ze zbiorczym widokiem roku" width="1500" height="683" loading="lazy"><figcaption>Biurkowy do złożenia</figcaption></figure>
-<figure class="wide"><img src="img/biurko-spiralka-s.webp" alt="Kalendarz biurkowy na spiralce: strona miesiąca i zbiorczy widok roku" width="1500" height="683" loading="lazy"><figcaption>Biurkowy na spiralce</figcaption></figure>
-</div></div></div>
-<script>
-(function(){var ov=document.getElementById('ov');function o(){ov.hidden=false;document.body.style.overflow='hidden'}function c(){ov.hidden=true;document.body.style.overflow=''}
-document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener('click',o)});
-document.getElementById('ovx').addEventListener('click',c);
-ov.addEventListener('click',function(e){if(e.target===ov)c()});
-document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!ov.hidden)c()});})();
-</script>
 <script>
 (function(){var a=new Audio();a.preload='none';var cur=null;
 function reset(){document.querySelectorAll('button.play').forEach(function(b){b.textContent='\u25B6';b.setAttribute('aria-pressed','false')})}
@@ -584,7 +553,7 @@ if(!touch){p.addEventListener('mouseenter',on);p.addEventListener('mousemove',fu
 else{g.addEventListener('click',function(e){if(e.target.closest('.nav,.v3d'))return;if(g.classList.contains('playing'))off();else{t.scrollTo({left:0});on()}})}
 t.addEventListener('scroll',function(){if(t.scrollLeft>10&&g.classList.contains('playing'))off()})});
 var m=document.getElementById('m3d'),f=m.querySelector('iframe');
-document.querySelectorAll('[data-open3d]').forEach(function(b){b.addEventListener('click',function(){f.src='podglad-3d.html?embed=1';m.classList.add('on')})});
+document.querySelectorAll('[data-open3d]').forEach(function(b){b.addEventListener('click',function(){f.src=(b.getAttribute('data-open3d')||'podglad-3d.html')+'?embed=1';m.classList.add('on')})});
 function cl(){m.classList.remove('on');f.src='about:blank'}m.querySelector('.x').addEventListener('click',cl);m.addEventListener('click',function(e){if(e.target===m)cl()});document.addEventListener('keydown',function(e){if(e.key==='Escape')cl()})})();
 document.querySelectorAll('.gal').forEach(function(g){var t=g.querySelector('.track'),d=g.querySelectorAll('.dots i');
 function k(){return Math.round(t.scrollLeft/t.clientWidth)}
