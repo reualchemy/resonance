@@ -564,7 +564,6 @@ document.querySelectorAll('.gal').forEach(function(g){var t=g.querySelector('.tr
 function k(){return Math.round(t.scrollLeft/t.clientWidth)}
 function u(){var n=k();d.forEach(function(x,i){x.className=i===n?'on':''})}
 function go(n){n=Math.max(0,Math.min(d.length-1,n));t.scrollTo({left:n*t.clientWidth,behavior:'smooth'})}
-['l','r'].forEach(function(c){var b=document.createElement('button');b.type='button';b.className='arr '+c;b.setAttribute('aria-label',c==='l'?'Poprzednie zdjęcie':'Następne zdjęcie');b.textContent=c==='l'?'‹':'›';b.addEventListener('click',function(){go(k()+(c==='l'?-1:1))});g.appendChild(b)});
 d.forEach(function(x,i){x.style.cursor='pointer';x.addEventListener('click',function(){go(i)})});
 var sx=null,sl=0;t.addEventListener('mousedown',function(e){sx=e.pageX;sl=t.scrollLeft;t.style.scrollSnapType='none'});
 window.addEventListener('mousemove',function(e){if(sx!==null)t.scrollLeft=sl-(e.pageX-sx)});
