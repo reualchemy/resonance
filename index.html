@@ -286,13 +286,14 @@ button.play:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .band .feat p,.band .sheet p{color:var(--muted)}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .two>*{min-width:0}
+.in.two.rytm{max-width:1400px;grid-template-columns:5fr 8fr;gap:48px}
 .mock{aspect-ratio:4/3;width:100%}
 #intro .ledecols{column-count:1;max-width:none;margin-top:24px;font-size:19px;line-height:1.7}#intro .ledecols p{margin:0 0 1em;break-inside:avoid}#intro .ledecols p:first-child{font-size:22px}@media(max-width:760px){#intro .ledecols{column-count:1}}
 .lede{font-size:20px;max-width:50ch;margin-top:20px;opacity:.9}
 .zig{margin-top:48px;display:flex;flex-direction:column;gap:56px}.zr{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:48px;align-items:center}.zr:nth-child(even){grid-template-columns:minmax(0,6fr) minmax(0,5fr)}.zr:nth-child(even) figure{order:2}.zr figure{margin:0;aspect-ratio:4/5;overflow:hidden;border-radius:0 120px 0 0;background:#EDE4D4}.zr:nth-child(even) figure{border-radius:120px 0 0 0}.zr figure img{width:100%;height:100%;object-fit:cover;display:block}.zt .n{display:block;font-size:14px;letter-spacing:.16em;color:#7C8768;margin-bottom:12px}.zt h3{font-size:32px;margin-bottom:14px}.zt p{font-size:18px;line-height:1.65;max-width:46ch}@media(max-width:760px){.zr,.zr:nth-child(even){grid-template-columns:minmax(0,1fr);gap:20px}.zr:nth-child(even) figure{order:0}.zig{gap:40px}.zt h3{font-size:26px}}
 .zig{display:grid!important;gap:0!important;position:relative}.zig .zr{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .8s ease,visibility .8s}.zig .zr.on{opacity:1;visibility:visible}.zig .zr figure{max-width:460px;width:100%;justify-self:center}.zig .zr,.zig .zr:nth-child(even){grid-template-columns:minmax(0,6fr) minmax(0,5fr)}.zig .zr figure,.zig .zr:nth-child(even) figure{order:2;border-radius:120px 0 0 0}.zig .zr .zt{order:1}@media(max-width:760px){.zig .zr,.zig .zr:nth-child(even){grid-template-columns:minmax(0,1fr)}.zig .zr figure,.zig .zr:nth-child(even) figure{order:0}.zig .zr .zt{order:1}}
 .zig .sub{position:relative;background:#1b1a17}.zig .sub img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .6s}.zig .sub img.on{opacity:1}.zig .subt{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:10px;z-index:2}.zig .subt button{font:inherit;font-size:13px;letter-spacing:.08em;padding:5px 14px;border-radius:20px;border:1px solid rgba(251,246,239,.7);background:rgba(27,26,23,.55);color:#FBF6EF;cursor:pointer}.zig .subt button.on{background:#FBF6EF;color:#4a453b}
-.vwrap{position:relative}.vwrap video{display:block;width:100%}.vsnd{position:absolute;right:14px;bottom:14px;font:inherit;font-size:14px;letter-spacing:.06em;padding:8px 16px;border-radius:22px;border:1px solid rgba(251,246,239,.75);background:rgba(34,30,26,.65);color:#FBF6EF;cursor:pointer}.vsnd:hover{background:rgba(34,30,26,.85)}
+.vwrap{position:relative}.vwrap video{display:block;width:100%}.vsnd{position:absolute;right:10px;bottom:10px;font:inherit;font-size:12px;letter-spacing:.05em;padding:5px 12px;opacity:.85;border-radius:22px;border:1px solid rgba(251,246,239,.75);background:rgba(34,30,26,.65);color:#FBF6EF;cursor:pointer}.vsnd:hover{background:rgba(34,30,26,.85)}
 .zdots{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:32px}.zdots button{width:11px;height:11px;border-radius:50%;border:1px solid #7C8768;background:transparent;padding:0;cursor:pointer}.zdots button.on{background:#7C8768}.zdots .za{width:auto;height:auto;border:0;background:none;font-size:22px;color:#4a453b;line-height:1}
 .feat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:40px}.feat>div{padding:28px;border:1px solid var(--line);background:#FBF6EF}.feat .n{display:block;font-size:13px;letter-spacing:.14em;color:#7C8768;margin-bottom:10px}.feat h3{font-size:24px;margin-bottom:10px}.feat p{font-size:16px;line-height:1.6}@media(max-width:900px){.feat{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}@media(max-width:560px){.feat{grid-template-columns:minmax(0,1fr)}}
 .cmp{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
@@ -353,7 +354,7 @@ h3 .zf{font-size:1.9em;line-height:.6}
 footer{border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
 footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .note{font-size:12px;color:var(--ph-fg);margin-top:16px}
-@media(max-width:760px){.two,.cmp,.vers{grid-template-columns:minmax(0,1fr)}.cmp>div{padding:22px}.in{padding-block:48px}header nav{display:none}}
+@media(max-width:760px){.two,.two.rytm,.cmp,.vers{grid-template-columns:minmax(0,1fr)}.cmp>div{padding:22px}.in{padding-block:48px}header nav{display:none}}
 </style>
 
 <div class="bar">Szkic układu · treści i liczby do uzupełnienia</div>
@@ -408,11 +409,11 @@ footer .in{padding-block:32px;display:flex;justify-content:space-between;gap:16p
 <p class="note">Szkic treści do dopracowania.</p>
 </div></section>
 
-<section class="band"><div class="in two">
+<section class="band"><div class="in two rytm">
 <div><h2>Podążaj za rytmem Księżyca.</h2>
 <p class="lede">Zaczynaj przy rosnącym, domykaj przy malejącym, zatrzymuj się w nowiu i świętuj w pełni. Rok ułożony w cykl, który możesz poczuć.</p>
 <div class="cta" style="margin-top:24px;justify-content:flex-start"><a class="btn olive" href="https://www.reualchemy.com/s/resonance-2027" target="_blank" rel="noopener">☾ zapisuję się na re:Sonance ♫ 2027</a></div></div>
-<div class="vwrap"><video id="rytmvid" class="mock" src="img/rytm-ksiezyca-v19.mp4" poster="img/rytm-ksiezyca-poster-v19.webp" width="1200" height="900" autoplay muted loop playsinline preload="metadata" aria-label="Spirala roku 2027 od stycznia do grudnia, z fazami Księżyca na każdy dzień" style="display:block;width:100%;height:auto;object-fit:cover"></video><button type="button" class="vsnd" id="rytmsnd" aria-pressed="false">♫ włącz dźwięk</button></div></div></section>
+<div class="vwrap"><video id="rytmvid" class="mock" src="img/rytm-ksiezyca-v21.mp4" poster="img/rytm-ksiezyca-poster-v21.webp" width="1200" height="900" autoplay muted loop playsinline preload="metadata" aria-label="Spirala roku 2027 od stycznia do grudnia, z fazami Księżyca na każdy dzień" style="display:block;width:100%;height:auto;object-fit:cover"></video><button type="button" class="vsnd" id="rytmsnd" aria-pressed="false">♫ włącz dźwięk</button></div></div></section>
 
 <section id="dzwiek" class="ruled"><div class="in two">
 <div><p class="eyebrow">Kalendarz i dźwięk</p><h2>Alchemia Dwóch Tonów™</h2><p class="tag" style="margin:14px 0 16px">Dwa tony na każdy dzień</p>
